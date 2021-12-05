@@ -30,10 +30,10 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="CIF" TextAlignment="Right" Margin="5"/>
-                <TextBlock Grid.Row="1" Text="NOMBRE" TextAlignment="Right" Margin="5"/>
-                <TextBlock Grid.Row="2" Text="PROVINCIA" TextAlignment="Right" Margin="5"/>
-                <TextBlock Grid.Row="3" Text="TELEFONO" TextAlignment="Right" Margin="5"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="CIF:" TextAlignment="Right" Margin="5"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="NOMBRE:" TextAlignment="Right" Margin="5"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="PROVINCIA:" TextAlignment="Right" Margin="5"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="TELEFONO:" TextAlignment="Right" Margin="5"/>
 
                 <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor._id, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor.Nombre, UpdateSourceTrigger=PropertyChanged}"/>

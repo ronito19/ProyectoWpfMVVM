@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfMVVM_Project.ViewModels
 {
-    public class PaginaPrincipalViewModel : ViewModelBase
+    class ProductosViewModel
     {
     }
 }

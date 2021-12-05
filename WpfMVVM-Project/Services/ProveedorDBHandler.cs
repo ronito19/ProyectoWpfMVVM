@@ -8,9 +8,24 @@ using WpfMVVM_Project.Models;
 
 namespace WpfMVVM_Project.Services
 {
-    class ProveedorDBHandler
+    public class ProveedorDBHandler
     {
         private static ObservableCollection<ProveedoresModel> listaProveedores = new ObservableCollection<ProveedoresModel>();
+
+        public static void CargarListaSupuesta()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                ProveedoresModel p = new ProveedoresModel();
+                p.Cif = i.ToString();
+                p.Nombre = " Proveedor " + i.ToString();
+                p.Provincia = " Toledo ";
+                p.Telefono = 123456789;
+                listaProveedores.Add(p);
+            }
+        }
+
+
 
         public static bool NuevoProveedor(ProveedoresModel proveedor)
         {

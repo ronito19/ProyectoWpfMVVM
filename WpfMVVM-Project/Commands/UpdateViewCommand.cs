@@ -24,17 +24,13 @@ namespace WpfMVVM_Project.Commands
         {
             Console.WriteLine(parameter.ToString());
             string vista = parameter.ToString();
-            if (vista.Equals("home"))
+            if (vista.Equals("principal"))
             {
-                MainViewModel.SelectedViewModel = new HomeViewModel();
+                MainViewModel.SelectedViewModel = new PaginaPrincipalViewModel();
             }
             else if (vista.Equals("gafas"))
             {
-                MainViewModel.SelectedViewModel = new InfoViewModel();
-            }
-            else if (vista.Equals("principal"))
-            {
-                MainViewModel.SelectedViewModel = new PaginaPrincipalViewModel();
+                MainViewModel.SelectedViewModel = new GafasViewModel();
             }
             else if (vista.Equals("proveedores"))
             {
@@ -43,6 +39,10 @@ namespace WpfMVVM_Project.Commands
             else if (vista.Equals("tabla"))
             {
                 MainViewModel.SelectedViewModel = new ProveedoresTableViewModel();
+            }
+            else if (vista.Equals(""))
+            {
+                MainViewModel.SelectedViewModel = new MainViewModel();
             }
         }
 

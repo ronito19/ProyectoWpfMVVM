@@ -15,6 +15,7 @@ namespace WpfMVVM_Project.ViewModels
 
 
         public ICommand NewProveedorCommand { get; set; }
+
         public ProveedoresViewModel()
         {
             CurrentProveedor = new ProveedoresModel();

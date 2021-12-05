@@ -8,11 +8,11 @@ using WpfMVVM_Project.Views;
 
 namespace WpfMVVM_Project.ViewModels
 {
-    class ViewModelBase : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnpropertyChanged(string propertyName = null)
+        protected void OnPropertyChanged(string propertyName = null)
         {
             if (PropertyChanged != null)
             {

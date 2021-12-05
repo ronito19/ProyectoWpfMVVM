@@ -18,7 +18,7 @@ namespace WpfMVVM_Project.Views
     /// <summary>
     /// Lógica de interacción para Nuevo_Edit_Productos.xaml
     /// </summary>
-    public partial class Nuevo_Edit_Productos : Page
+    public partial class Nuevo_Edit_Productos : UserControl
     {
         public Nuevo_Edit_Productos()
         {

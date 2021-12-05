@@ -9,7 +9,7 @@
 
     <Grid Opacity="0.8">
         <Grid.Background>
-            <ImageBrush ImageSource="gafas.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="gafas.jpg" />
         </Grid.Background>
 
 
@@ -30,8 +30,8 @@
 
                 <Button x:Name="btPrincipal" Margin="20,50" Content="PRINCIPAL" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="principal" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold" />
                 <Button x:Name="btGafas" Margin="20,50" Content="GAFAS" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="gafas" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
-                <Button x:Name="btProveedores" Margin="20,50" Content="PROVEEDORES" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="info" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
-                <Button x:Name="btProductos" Margin="20,50" Content="PRODUCTOS" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="info" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
+                <Button x:Name="btProveedores" Margin="20,50" Content="PROVEEDORES" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="proveedores" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
+                <Button x:Name="btProductos" Margin="20,50" Content="PRODUCTOS" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="productos" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
 
             </StackPanel>
 

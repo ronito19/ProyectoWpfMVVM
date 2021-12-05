@@ -11,19 +11,22 @@ namespace WpfMVVM_Project.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
-
+        public ProveedoresModel Proveedor { set; get; }
 
         private ViewModelBase selectedViewModel;
 
         public ViewModelBase SelectedViewModel
         {
             get { return selectedViewModel; }
-            set 
+            set  
             {
                 selectedViewModel = value;
-                OnpropertyChanged(nameof(SelectedViewModel));
+                OnPropertyChanged(nameof(SelectedViewModel));
             }
         }
+
+
+        //public ProveedoresViewModel SelectedViewModel { set; get; }
 
 
         public ICommand UpdateViewCommand { set; get; }
@@ -32,6 +35,7 @@ namespace WpfMVVM_Project.ViewModels
         {
             SelectedViewModel = new ViewModelBase();
             UpdateViewCommand = new UpdateViewCommand(this);
+            SelectedViewModel = new ProveedoresViewModel();
             
 
         }

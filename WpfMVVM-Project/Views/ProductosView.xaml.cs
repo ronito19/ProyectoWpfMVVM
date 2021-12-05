@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfMVVM_Project.Views
 {
     /// <summary>
-    /// Lógica de interacción para PrincipalView.xaml
+    /// Lógica de interacción para ProductosView.xaml
     /// </summary>
-    public partial class PrincipalView : UserControl
+    public partial class ProductosView : UserControl
     {
-        public PrincipalView()
+        public ProductosView()
         {
             InitializeComponent();
         }

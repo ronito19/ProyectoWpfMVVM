@@ -13,18 +13,52 @@ namespace WpfMVVM_Project.ViewModels
     class ProveedoresTableViewModel : ViewModelBase
     {
 
-        public ObservableCollection<ProveedoresModel> ListaProveedores { get; set; }
+        private ObservableCollection<ProveedoresModel> listaProveedores { get; set; }
 
+        public ObservableCollection<ProveedoresModel> ListaProveedores
+        {
+            get
+            {
+                return listaProveedores;
+            }
+            set
+            {
+                listaProveedores = value;
+                OnPropertyChanged(nameof(ListaProveedores));
+            }
+        }
+
+    
 
         public ICommand LoadProveedoresCommand { get; set; }
 
+        public ICommand LoadProveedorCommand { get; set; }
 
-        public ProveedoresModel CurrentProveedor { get; set; }
+
+
+
+        private ProveedoresModel currentProveedor { get; set; }
+
+        public ProveedoresModel CurrentProveedor 
+        {
+            get 
+            {
+                return currentProveedor;
+            }
+            set 
+            {
+                currentProveedor = value;
+                OnPropertyChanged(nameof(CurrentProveedor));
+            }
+        }
+
+
 
         public ProveedoresTableViewModel()
         {
             ListaProveedores = new ObservableCollection<ProveedoresModel>();
             LoadProveedoresCommand = new LoadProveedoresCommand(this);
+            LoadProveedorCommand = new LoadProveedorCommand(this);
             CurrentProveedor = new ProveedoresModel();
         }
     }

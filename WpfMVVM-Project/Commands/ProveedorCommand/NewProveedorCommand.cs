@@ -21,7 +21,7 @@ namespace WpfMVVM_Project.Commands.ProveedorCommand
 
         public void Execute(object parameter)
         {
-            bool OKinsertar = ProveedorDBHandler.NuevoProveedor(ProveedoresViewModel.CurrentProveedor);
+            bool OKinsertar = ProveedorDBHandler.NuevoProveedor(proveedoresViewModel.CurrentProveedor);
             if (OKinsertar)
             {
                 MessageBox.Show(" Se ha creado el proveedor ");

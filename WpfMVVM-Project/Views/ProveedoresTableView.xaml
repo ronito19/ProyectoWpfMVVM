@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:WpfMVVM_Project.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d">
 
 
     <i:Interaction.Triggers>
@@ -30,8 +29,15 @@
         <TextBlock Text="TABLA  PROVEEDORES" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center"/>
 
         <StackPanel Grid.Row="1" Grid.Column="0" >
-        <ListView ItemsSource="{Binding ListaProveedores}">
-            <ListView.View>
+        <ListView x:Name="proveedorListView" ItemsSource="{Binding ListaProveedores}">
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding LoadProveedoresCommand}" CommandParameter="{Binding ElementName=proveedorListView, Path=SelectedItem}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
+                <ListView.View>
                 <GridView>
                     <GridViewColumn Header="CIF" DisplayMemberBinding="{Binding Path=_id}"/>
                         <GridViewColumn Header="NOMBRE" DisplayMemberBinding="{Binding Path=Nombre}"/>
@@ -43,7 +49,10 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center" Margin="10">
+        
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center" Margin="20,10" Visibility="Collapsed">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
