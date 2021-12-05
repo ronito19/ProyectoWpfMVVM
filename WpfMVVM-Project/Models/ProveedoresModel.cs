@@ -23,7 +23,7 @@ namespace WpfMVVM_Project.Models
 
         private string _id;
 
-        public string Cif
+        public string _Id
         {
             get
             {
@@ -32,7 +32,7 @@ namespace WpfMVVM_Project.Models
             set 
             {
                 _id = value;
-                OnPropertyChanged(nameof(Cif));
+                OnPropertyChanged(nameof(_Id));
             }
         }
 

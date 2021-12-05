@@ -17,7 +17,7 @@ namespace WpfMVVM_Project.Services
             for (int i = 0; i < 6; i++)
             {
                 ProveedoresModel p = new ProveedoresModel();
-                p.Cif = i.ToString();
+                p._Id = i.ToString();
                 p.Nombre = " Proveedor " + i.ToString();
                 p.Provincia = " Toledo ";
                 p.Telefono = 123456789;

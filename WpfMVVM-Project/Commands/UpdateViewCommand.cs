@@ -34,11 +34,11 @@ namespace WpfMVVM_Project.Commands
             }
             else if (vista.Equals("proveedores"))
             {
-                MainViewModel.SelectedViewModel = new ProveedoresViewModel();
-            }
-            else if (vista.Equals("tabla"))
-            {
                 MainViewModel.SelectedViewModel = new ProveedoresTableViewModel();
+            }
+            else if (vista.Equals("productos"))
+            {
+                MainViewModel.SelectedViewModel = new ProductosViewModel();
             }
             else if (vista.Equals(""))
             {
