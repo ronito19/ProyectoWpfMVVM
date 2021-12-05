@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfMVVM_Project.ViewModels
+namespace WpfMVVM_Project.Models
 {
-    class HomeViewModel : ViewModelBase
+    class ProductosModel
     {
-
     }
 }

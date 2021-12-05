@@ -9,26 +9,30 @@ using WpfMVVM_Project.Models;
 
 namespace WpfMVVM_Project.ViewModels
 {
-    class MainViewModel
+    class MainViewModel : ViewModelBase
     {
-        
-
-        public TestModel testmodel { set; get; }
 
 
-        public HomeViewModel SelectedViewModel { set; get; }
+        private ViewModelBase selectedViewModel;
+
+        public ViewModelBase SelectedViewModel
+        {
+            get { return selectedViewModel; }
+            set 
+            {
+                selectedViewModel = value;
+                OnpropertyChanged(nameof(SelectedViewModel));
+            }
+        }
 
 
         public ICommand UpdateViewCommand { set; get; }
 
         public MainViewModel()
         {
-            testmodel = new TestModel();
-            testmodel.Marca = "Nike";
-            testmodel.Referencia = "1234";
-
-            UpdateViewCommand = new UpdateViewCommand();
-            SelectedViewModel = new HomeViewModel();
+            SelectedViewModel = new ViewModelBase();
+            UpdateViewCommand = new UpdateViewCommand(this);
+            
 
         }
     }

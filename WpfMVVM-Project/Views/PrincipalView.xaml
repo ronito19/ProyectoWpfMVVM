@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="WpfMVVM_Project.Views.HomeView"
+﻿<UserControl x:Class="WpfMVVM_Project.Views.PrincipalView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfMVVM_Project.Views"
              mc:Ignorable="d">
-    
-    <StackPanel Width="800" Height="400" Orientation="Vertical" Background="Indigo">
-        <TextBlock Text="BIENVENIDO A LA APP" TextAlignment="Center" Margin="10" FontSize="40" FontWeight="Heavy"/>
+
+    <StackPanel Width="800" Height="400" Orientation="Vertical" Background="Indigo" Grid.Row="2" Grid.Column="2">
+        <TextBlock Text="HOLA" TextAlignment="Center" Margin="10" FontSize="40" FontWeight="Heavy"/>
     </StackPanel>
 </UserControl>

@@ -5,13 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMVVM_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="OPTICA" Height="800" Width="1200">
 
-    <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal">
-            <Button Margin="10" Content="HOME" Width="120" Command="{Binding UpdateViewCommand}" CommandParameter="HOLA MUNDO"/>
-            <Button Margin="10" Content="INFO" Width="120"/>
+    <Grid Opacity="0.8">
+        <Grid.Background>
+            <ImageBrush ImageSource="gafas.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+
+                <Button x:Name="btPrincipal" Margin="20,50" Content="PRINCIPAL" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="principal" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold" />
+                <Button x:Name="btGafas" Margin="20,50" Content="GAFAS" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="gafas" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
+                <Button x:Name="btProveedores" Margin="20,50" Content="PROVEEDORES" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="info" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
+                <Button x:Name="btProductos" Margin="20,50" Content="PRODUCTOS" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="info" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
+
+            </StackPanel>
+
+
+
         </StackPanel>
-        <ContentControl Content="{Binding SelectedViewModel}"/>
-    </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" >
+
+            <ContentControl Content="{Binding SelectedViewModel}"/>
+
+            <TextBlock Text="TRABAJO  DE  DISEÑO  MVVM  OPTICA:  SUPERLENTES" TextAlignment="Center" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
+            <TextBlock Text="ALUMNO:  RONNIE  MASCARO  TRONCOSO" TextAlignment="Left" FontSize="20" FontWeight="Bold" FontStyle="Italic" Margin="50,450,300,300" Height="30" Padding="0" />
+
+        </StackPanel>
+
+    </Grid>
 </Window>

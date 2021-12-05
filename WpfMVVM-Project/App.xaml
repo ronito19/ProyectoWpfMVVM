@@ -11,6 +11,28 @@
             <DataTemplate DataType="{x:Type  viewsmodels:HomeViewModel}">
                 <views:HomeView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type  viewsmodels:InfoViewModel}">
+                <views:InfoView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type  viewsmodels:PaginaPrincipalViewModel}">
+                <views:PaginaPrincipal/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type  viewsmodels:ProveedoresTableViewModel}">
+                <views:ProveedoresTableView/>
+            </DataTemplate>
+
+
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

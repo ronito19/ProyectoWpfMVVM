@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WpfMVVM_Project.Views
 {
     /// <summary>
-    /// Lógica de interacción para HomeView.xaml
+    /// Lógica de interacción para ProveedoresView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class ProveedoresView : UserControl
     {
-        public HomeView()
+        public ProveedoresView()
         {
             InitializeComponent();
         }
