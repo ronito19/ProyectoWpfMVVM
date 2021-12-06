@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="WpfMVVM_Project.Views.ProductosTableView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfMVVM_Project.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="700">
+    
+    <Grid Background="#FF3574E0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/> 
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="80"/>
+       
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="TABLA  PRODUCTOS" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center" Margin="10" Foreground="#FF0C0C0F" />
+
+        <TextBlock Grid.Row="1" Text="CODIGO DE BARRA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="2" Text="PROVEEDOR:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="3" Text="CLASE:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="4" Text="MARCA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="5" Text="TIPO:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="6" Text="REFERENCIA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="7" Text="DESCRIPCION:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="8" Text="PRECIO:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="9" Text="FECHA DE ENTRADA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="10" Text="STOCK:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+
+
+        <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Left"  Cursor="IBeam" Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" IsEnabled="False" />
+        
+        <TextBox Grid.Row="2" Grid.Column="1" TextAlignment="Left"  Margin="10" Cursor="IBeam"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" />
+        
+        <TextBox Grid.Row="3" Grid.Column="1" TextAlignment="Center"  Margin="10" Cursor="IBeam"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" VerticalContentAlignment="Center"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" Background="Transparent">
+            <ComboBoxItem Content="Gafas Graduadas"/>
+            <ComboBoxItem Content="Gafas de Sol"/>
+            <ComboBoxItem Content="Gafas Deportivas"/>
+            <ComboBoxItem Content="Lentillas"/>
+            <ComboBoxItem Content="Audifonos"/>
+        </ComboBox>
+
+
+        <TextBox Grid.Row="4" Grid.Column="1" TextAlignment="Center"  Margin="10" Cursor="IBeam"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" VerticalContentAlignment="Center"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold">
+            <ComboBoxItem Content="Arnette"/>
+            <ComboBoxItem Content="Bvlgari"/>
+            <ComboBoxItem Content="Carrera"/>
+            <ComboBoxItem Content="Dior"/>
+            <ComboBoxItem Content="Emporio Armani"/>
+            <ComboBoxItem Content="Gucci"/>
+            <ComboBoxItem Content="Emporio Armani"/>
+            <ComboBoxItem Content="Michaek Kors"/>
+            <ComboBoxItem Content="Oakley"/>
+            <ComboBoxItem Content="Ray-Ban"/>
+        </ComboBox>
+        
+        <TextBox Grid.Row="5" Grid.Column="1" TextAlignment="Center"  Margin="10" Cursor="IBeam"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" VerticalContentAlignment="Center"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" >
+            <ComboBoxItem Content="Montura de Metal"/>
+            <ComboBoxItem Content="Montura de Plastico"/>
+            <ComboBoxItem Content="Lentillas Blandas"/>
+            <ComboBoxItem Content="Gafas Monofocales"/>
+            <ComboBoxItem Content="Gafas Bifocales"/>
+            <ComboBoxItem Content="Gafas de cerca"/>
+            <ComboBoxItem Content="Gafas Progresivas"/>
+        </ComboBox>
+
+        <TextBox Grid.Row="6" Grid.Column="1" TextAlignment="Left"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" Cursor="IBeam"/>
+
+        <TextBox Grid.Row="7" Grid.Column="1" TextAlignment="Left"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" Cursor="IBeam"/>
+
+        <TextBox Grid.Row="8" Grid.Column="1" TextAlignment="Left"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" Cursor="IBeam"/>
+        
+        <TextBox Grid.Row="9" Grid.Column="1" TextAlignment="Left"  Margin="10" Cursor="IBeam"/>
+        <DatePicker  Grid.Row="9" Grid.Column="1" Margin="9.5" Width="400" FontSize="20" FontWeight="Bold">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF0936F1" Offset="1"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+        </DatePicker>
+
+        <TextBox Grid.Row="10" Grid.Column="1" TextAlignment="Left"  Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" Cursor="IBeam"/>
+
+        <CheckBox Grid.Row="11" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10" />
+
+        <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="ALTA" Margin="10" Width="120" Height="40" Background="#FF833166" />
+            <Button Content="ACEPTAR" Margin="10" Width="120" Height="40" Background="#FF833166" />
+            <Button Content="MODIFICAR" Margin="10" Width="120" Height="40" Background="#FF833166" />
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

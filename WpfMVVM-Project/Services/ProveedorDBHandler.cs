@@ -14,7 +14,9 @@ namespace WpfMVVM_Project.Services
 
         public static void CargarListaSupuesta()
         {
-            for (int i = 0; i < 6; i++)
+            listaProveedores = new ObservableCollection<ProveedoresModel>();
+
+            for (int i = 1; i < 11; i++)
             {
                 ProveedoresModel p = new ProveedoresModel();
                 p._Id = i.ToString();
@@ -40,6 +42,18 @@ namespace WpfMVVM_Project.Services
 
             return OKinsertar;
         }
+
+
+
+        public static void BorrarProveedor(ProveedoresModel proveedor)
+        {
+            listaProveedores.Remove(proveedor);
+        }
+
+
+
+
+
 
 
         public static ObservableCollection<ProveedoresModel> ObtenerListaProveedores()

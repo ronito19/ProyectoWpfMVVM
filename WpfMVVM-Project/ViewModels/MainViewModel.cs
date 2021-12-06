@@ -26,6 +26,10 @@ namespace WpfMVVM_Project.ViewModels
         }
 
 
+
+        public ProductosModel Productos { get; set; }
+
+
         //public ProveedoresViewModel SelectedViewModel { set; get; }
 
 
@@ -36,7 +40,7 @@ namespace WpfMVVM_Project.ViewModels
             SelectedViewModel = new ViewModelBase();
             UpdateViewCommand = new UpdateViewCommand(this);
             //SelectedViewModel = new ProveedoresViewModel();
-            
+            Productos = new ProductosModel();
 
         }
     }

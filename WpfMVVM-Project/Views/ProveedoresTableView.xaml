@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:WpfMVVM_Project.Views"
-             mc:Ignorable="d"
-              d:DesignHeight="450" d:DesignWidth="800">
+             x:Name="vista"
+             mc:Ignorable="d" Width="800" Height="600">
 
 
     <i:Interaction.Triggers>
@@ -14,10 +14,10 @@
             <i:InvokeCommandAction Command="{Binding LoadProveedoresCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    
-    
-    
-    <Grid>
+
+
+
+    <Grid Background="#FF4F4BED">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="300"/>
@@ -27,33 +27,39 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="TABLA  PROVEEDORES" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="TABLA  PROVEEDORES" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center" Margin="10"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" >
-        <ListView x:Name="proveedorListView" ItemsSource="{Binding ListaProveedores}">
+        <StackPanel Grid.Row="1" Grid.Column="0"  Margin="20">
+            <ListView x:Name="proveedorListView" ItemsSource="{Binding ListaProveedores}" SelectionChanged="proveedorListView_SelectionChanged">
 
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
-                        <i:InvokeCommandAction Command="{Binding LoadProveedoresCommand}" CommandParameter="{Binding ElementName=proveedorListView, Path=SelectedItem}"/>
+                        <i:InvokeCommandAction Command="{Binding LoadProveedorCommand}" CommandParameter="{Binding ElementName=proveedorListView, Path=SelectedItem}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
 
                 <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="CIF" DisplayMemberBinding="{Binding Path=_id}"/>
+                    <GridView>
+                        <GridViewColumn Header="CIF" DisplayMemberBinding="{Binding Path=_id}" />
                         <GridViewColumn Header="NOMBRE" DisplayMemberBinding="{Binding Path=Nombre}"/>
                         <GridViewColumn Header="PROVINCIA" DisplayMemberBinding="{Binding Path=Provincia}"/>
                         <GridViewColumn Header="TELEFONO" DisplayMemberBinding="{Binding Path=Telefono}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </StackPanel>
 
 
-        
 
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center" Margin="20,10" Visibility="Visible">
+
+        <StackPanel x:Name="stackDatosPro" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="10,100,10,10" Visibility="Visible">
+            <StackPanel.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFC1D4ED" Offset="1"/>
+                </RadialGradientBrush>
+            </StackPanel.Background>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -65,19 +71,21 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0" Text="CIF" TextAlignment="Right" Margin="5"/>
-                <TextBlock Grid.Row="1" Text="NOMBRE" TextAlignment="Right" Margin="5"/>
-                <TextBlock Grid.Row="2" Text="PROVINCIA" TextAlignment="Right" Margin="5"/>
-                <TextBlock Grid.Row="3" Text="TELEFONO" TextAlignment="Right" Margin="5"/>
+                <TextBlock Grid.Row="0" Text="CIF" TextAlignment="Right" Margin="5" FontWeight="Bold"/>
+                <TextBlock Grid.Row="1" Text="NOMBRE" TextAlignment="Right" Margin="5" FontWeight="Bold"/>
+                <TextBlock Grid.Row="2" Text="PROVINCIA" TextAlignment="Right" Margin="5" FontWeight="Bold"/>
+                <TextBlock Grid.Row="3" Text="TELEFONO" TextAlignment="Right" Margin="5" FontWeight="Bold"/>
 
-                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor._Id, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor.Nombre, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBox Grid.Row="2" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor.Provincia, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBox Grid.Row="3" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor.Telefono, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor._Id, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
+                <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor.Nombre, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}"/>
+                <TextBox Grid.Row="2" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor.Provincia, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}"/>
+                <TextBox Grid.Row="3" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProveedor.Telefono, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}"/>
 
             </Grid>
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="EDITAR" Width="100" HorizontalAlignment="Center"/>
+                <Button x:Name="btnEditarDatos" Content="EDITAR" Width="100" HorizontalAlignment="Center" Margin="5" Click="btnEditarDatos_Click"/>
+                <Button x:Name="btnGuardarDatos" Content="GUARDAR" Width="100" HorizontalAlignment="Center" Margin="5" Click="btnGuardarDatos_Click"/>
+                <Button x:Name="btnBorrarDatos" Content="BORRAR" Width="100" HorizontalAlignment="Center" Margin="5" Click="btnBorrarDatos_Click"/>
             </StackPanel>
         </StackPanel>
 

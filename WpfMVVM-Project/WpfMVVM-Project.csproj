@@ -73,6 +73,7 @@
     <Compile Include="Commands\ProveedorCommand\LoadProveedoresCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\NewProveedorCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />
+    <Compile Include="Models\INotifypropertyChanged.cs" />
     <Compile Include="Models\ProductosModel.cs" />
     <Compile Include="Models\ProveedoresModel.cs" />
     <Compile Include="Models\TestModel.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\Nuevo-ProductosViewModel.cs" />
     <Compile Include="ViewModels\PaginaPrincipalViewModel.cs" />
+    <Compile Include="ViewModels\ProductosTableViewModel.cs" />
     <Compile Include="ViewModels\ProductosViewModel.cs" />
     <Compile Include="ViewModels\ProveedoresTableViewModel.cs" />
     <Compile Include="ViewModels\ProveedoresViewModel.cs" />
@@ -92,6 +94,9 @@
     </Compile>
     <Compile Include="Views\PaginaPrincipal.xaml.cs">
       <DependentUpon>PaginaPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductosTableView.xaml.cs">
+      <DependentUpon>ProductosTableView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductosView.xaml.cs">
       <DependentUpon>ProductosView.xaml</DependentUpon>
@@ -119,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PaginaPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductosTableView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

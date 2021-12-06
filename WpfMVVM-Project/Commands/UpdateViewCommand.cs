@@ -38,7 +38,7 @@ namespace WpfMVVM_Project.Commands
             }
             else if (vista.Equals("productos"))
             {
-                MainViewModel.SelectedViewModel = new ProductosViewModel();
+                MainViewModel.SelectedViewModel = new ProductosTableViewModel();
             }
             else if (vista.Equals(""))
             {

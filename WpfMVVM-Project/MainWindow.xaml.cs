@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace WpfMVVM_Project
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         
 
@@ -28,8 +29,59 @@ namespace WpfMVVM_Project
         {
             InitializeComponent();
 
+            E10EstadoInicialVista();
+
             DataContext = new MainViewModel();
             
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged; 
+        private void OnPropertyChanged(string propertyName = null)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+
+
+        private bool editarVista;
+
+        private object paginaPrincipal;
+
+        public bool EditarVista
+        {
+            get
+            {
+                return editarVista;
+            }
+            set
+            {
+                editarVista = value;
+                OnPropertyChanged(nameof(EditarVista));
+            }
+        }
+
+
+
+        public void E10EstadoInicialVista()
+        {
+            
+        }
+
+
+
+        private void btPrincipal_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
+
+        private void btProveedores_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
