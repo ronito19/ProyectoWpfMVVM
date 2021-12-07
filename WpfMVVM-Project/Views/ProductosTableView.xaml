@@ -31,16 +31,16 @@
 
         <TextBlock Text="TABLA  PRODUCTOS" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center" Margin="10" Foreground="#FF0C0C0F" />
 
-        <TextBlock Grid.Row="1" Text="CODIGO DE BARRA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="2" Text="PROVEEDOR:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="3" Text="CLASE:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="4" Text="MARCA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="5" Text="TIPO:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="6" Text="REFERENCIA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="7" Text="DESCRIPCION:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="8" Text="PRECIO:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="9" Text="FECHA DE ENTRADA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
-        <TextBlock Grid.Row="10" Text="STOCK:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="25" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="20"/>
+        <TextBlock Grid.Row="1" Text="CODIGO DE BARRA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="2" Text="PROVEEDOR:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="3" Text="CLASE:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="4" Text="MARCA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="5" Text="TIPO:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="6" Text="REFERENCIA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="7" Text="DESCRIPCION:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="8" Text="PRECIO:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="9" Text="FECHA DE ENTRADA:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
+        <TextBlock Grid.Row="10" Text="STOCK:" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Foreground="White" Background="#FF3D0F94" Margin="10" Padding="30"/>
 
 
         <TextBox Grid.Row="1" Grid.Column="1" TextAlignment="Left"  Cursor="IBeam" Margin="9.5" Width="400" FontSize="20" FontWeight="Bold" IsEnabled="False" />

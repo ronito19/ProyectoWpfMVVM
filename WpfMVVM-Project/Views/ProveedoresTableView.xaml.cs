@@ -115,8 +115,9 @@ namespace WpfMVVM_Project.Views
             switch (mensaje)
                 { 
                 case MessageBoxResult.Yes:
-                    ProveedoresModel proveedores = (ProveedoresModel)proveedorListView.SelectedItem;
-                    //ProveedorDBHandler.BorrarProveedor(proveedores.Telefono);
+                    ProveedoresModel listaProveedores = (ProveedoresModel)proveedorListView.SelectedItem;
+                    ProveedorDBHandler.BorrarProveedor(listaProveedores);
+
                     MessageBox.Show(" Proveedor BORRADO ");
                     break;
 

@@ -68,8 +68,13 @@ namespace WpfMVVM_Project.Models
             }
         }
 
+        internal ProveedoresModel Clone()
+        {
+            throw new NotImplementedException();
+        }
 
         private int telefono;
+        internal static object listaProveedores;
 
         public int Telefono
         {
@@ -85,7 +90,6 @@ namespace WpfMVVM_Project.Models
             }
         }
 
-
-        
+     
     }
 }

@@ -45,9 +45,18 @@ namespace WpfMVVM_Project.Services
 
 
 
-        public static void BorrarProveedor(ProveedoresModel proveedor)
+
+        public static int BorrarProveedor(ProveedoresModel proveedor)
         {
-            listaProveedores.Remove(proveedor);
+            foreach (ProveedoresModel p in listaProveedores)
+            {
+                if (p._Id.Equals(proveedor._Id))
+                {
+                    int index = listaProveedores.IndexOf(p);
+                    return index;
+                }
+            }
+            return -1;
         }
 
 

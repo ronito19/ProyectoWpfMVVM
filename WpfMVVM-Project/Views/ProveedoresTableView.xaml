@@ -85,7 +85,7 @@
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btnEditarDatos" Content="EDITAR" Width="100" HorizontalAlignment="Center" Margin="5" Click="btnEditarDatos_Click"/>
                 <Button x:Name="btnGuardarDatos" Content="GUARDAR" Width="100" HorizontalAlignment="Center" Margin="5" Click="btnGuardarDatos_Click"/>
-                <Button x:Name="btnBorrarDatos" Content="BORRAR" Width="100" HorizontalAlignment="Center" Margin="5" Click="btnBorrarDatos_Click"/>
+                <Button x:Name="btnBorrarDatos" Content="BORRAR" Command="{Binding DeleteProveedorCommand}" CommandParameter="borrar" Width="100" HorizontalAlignment="Center" Margin="5" Click="btnBorrarDatos_Click"/>
             </StackPanel>
         </StackPanel>
 
