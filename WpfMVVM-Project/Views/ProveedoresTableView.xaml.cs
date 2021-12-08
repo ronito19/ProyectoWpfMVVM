@@ -109,7 +109,7 @@ namespace WpfMVVM_Project.Views
 
         private void btnBorrarDatos_Click(object sender, RoutedEventArgs e)
         {
-            E01MostrarDatos();
+            
             MessageBoxResult mensaje = MessageBox.Show(" Deseas borrar al proveedor? ", " BORRAR PROVEEDOR ", MessageBoxButton.YesNo, MessageBoxImage.Question);
             
             switch (mensaje)
@@ -124,7 +124,7 @@ namespace WpfMVVM_Project.Views
                 case MessageBoxResult.No:
                     break;
                 }
-
+            E01MostrarDatos();
             proveedorListView.IsEnabled = true;
         }
 

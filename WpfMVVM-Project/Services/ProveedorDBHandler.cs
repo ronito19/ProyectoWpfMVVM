@@ -62,6 +62,35 @@ namespace WpfMVVM_Project.Services
 
 
 
+        public static void ModificarProveedor(ProveedoresModel proveedor, int pos)
+        {
+
+            listaProveedores[pos] = proveedor;
+        }
+
+
+
+
+        public static void ActualizarProveedor()
+        {
+            listaProveedores = ObservableCollection<ProveedoresModel>();
+
+            foreach (ProveedoresModel proveedor in listaProveedores)
+            {
+
+
+            }
+        }
+
+
+
+
+
+
+        private static ObservableCollection<T> ObservableCollection<T>()
+        {
+            throw new NotImplementedException();
+        }
 
 
 

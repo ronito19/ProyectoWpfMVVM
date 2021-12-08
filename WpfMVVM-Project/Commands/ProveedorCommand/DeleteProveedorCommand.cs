@@ -57,11 +57,6 @@ namespace WpfMVVM_Project.Commands.ProveedorCommand
 
 
 
-        private ProveedoresTableView proveedoresTableView;
-
-        public DeleteProveedorCommand(ProveedoresTableView proveedoresTableView)
-        {
-            this.proveedoresTableView = proveedoresTableView;
-        }
+        
     }
 }

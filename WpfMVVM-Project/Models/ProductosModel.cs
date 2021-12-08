@@ -42,26 +42,26 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private string proveedores;
+        private string proveedor;
 
-        public string Proveedores
+        public string Proveedor
         {
             get
             {
-                return proveedores;
+                return proveedor;
             }
             set
             {
-                proveedores = value;
-                OnPropertyChanged(nameof(Proveedores));
+                proveedor = value;
+                OnPropertyChanged(nameof(Proveedor));
             }
         }
 
 
 
-        private string Clase;
+        private string clase;
 
-        public string clase
+        public string Clase
         {
             get
             {
@@ -76,9 +76,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private string Marca;
+        private string marca;
 
-        public string marca
+        public string Marca
         {
             get
             {
@@ -93,9 +93,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private string Tipo;
+        private string tipo;
 
-        public string tipo
+        public string Tipo
         {
             get
             {
@@ -110,9 +110,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private string Referencia;
+        private string referencia;
 
-        public string referencia
+        public string Referencia
         {
             get
             {
@@ -127,9 +127,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private string Descripcion;
+        private string descripcion;
 
-        public string descripcion
+        public string Descripcion
         {
             get
             {
@@ -144,9 +144,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private double Precio;
+        private double precio;
 
-        public double precio
+        public double Precio
         {
             get
             {
@@ -161,9 +161,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private DateTime FechaEntrada;
+        private DateTime fechaEntrada;
 
-        public DateTime fechaEntrada
+        public DateTime FechaEntrada
         {
             get
             {
@@ -178,9 +178,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private int Stock;
+        private int stock;
 
-        public int stock
+        public int Stock
         {
             get
             {

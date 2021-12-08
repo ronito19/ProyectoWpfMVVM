@@ -24,5 +24,17 @@ namespace WpfMVVM_Project.Views
         {
             InitializeComponent();
         }
+
+        private void proveedoresListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+       
+
+        private void proveedoresListView_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            
+        }
     }
 }

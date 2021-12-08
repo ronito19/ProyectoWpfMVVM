@@ -40,10 +40,7 @@ namespace WpfMVVM_Project.Commands
             {
                 MainViewModel.SelectedViewModel = new ProductosTableViewModel();
             }
-            else if (vista.Equals(""))
-            {
-                MainViewModel.SelectedViewModel = new MainViewModel();
-            }
+            
         }
 
 
