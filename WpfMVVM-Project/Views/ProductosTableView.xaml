@@ -4,9 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:WpfMVVM_Project.Views"
+             x:Name="vista"
              mc:Ignorable="d" 
-             Height="600" Width="800">
+             Height="600" Width="920">
 
 
     <i:Interaction.Triggers>
@@ -14,41 +16,45 @@
             <i:InvokeCommandAction Command="{Binding LoadProductosCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    
-    
-    <Grid Background="#FF4F4BED">
+
+
+    <Grid Background="#FFE2BAAB">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="350"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="TABLA  PRODUCTOS" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center"/>
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="20" Width="300" >
-            <ListView x:Name="productoListView" HorizontalAlignment="Center" ItemsSource="{Binding ListaProductos}">
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="10" Width="450" HorizontalAlignment="Center">
+            <ListView x:Name="productoListView" HorizontalAlignment="Center" ItemsSource="{Binding ListaProductos}" SelectionChanged="productosListView_SelectionChanged">
 
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">
                         <i:InvokeCommandAction Command="{Binding LoadProductoCommand}" CommandParameter="{Binding ElementName=productoListView, Path=SelectedItem}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
-                
-                
+
+
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="CODIGO DE BARRAS" DisplayMemberBinding="{Binding Path=_Id}"/>
+                        <GridViewColumn Header="COD. B" DisplayMemberBinding="{Binding Path=_Id}"/>
+                        <GridViewColumn Header="PROVEEDORES" DisplayMemberBinding="{Binding Path=Proveedor}"/>
+                        <GridViewColumn Header="CLASE" DisplayMemberBinding="{Binding Path=Clase}"/>
+                        <GridViewColumn Header="MARCA" DisplayMemberBinding="{Binding Path=Marca}"/>
+                        <GridViewColumn Header="TIPO" DisplayMemberBinding="{Binding Path=Tipo}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
         </StackPanel>
-        
-        
-        
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="20,100,30,10" VerticalAlignment="Center">
+
+
+
+        <StackPanel Background="#FF897878" x:Name="stackDatosProductos"  Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="10,100,10,10" VerticalAlignment="Center" Visibility="Visible">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -80,13 +86,53 @@
 
 
 
-                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProducto._Id, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
+                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto._Id, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
 
-                <ComboBox Grid.Row="1" Grid.Column="1"  Cursor="IBeam" Text="{Binding CurrentProducto.Proveedor, UpdateSourceTrigger=PropertyChanged}">
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" >
+                    <ComboBox  Foreground="Red" Text="{Binding CurrentProducto.Proveedor, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" FontWeight="Bold"  Width="60">
+                    </ComboBox>
+                    <materialDesign:DialogHost x:Name="dialogProveedores" DialogTheme="Light" Grid.Column="2" Grid.Row="2"               >
+                        <materialDesign:DialogHost.DialogContent>
+                            <StackPanel Margin="16">
+                                <TextBlock Text="Selecciona un proveedor" />
 
-                </ComboBox>
+                                <ComboBox x:Name="cmbListaProveedores"
+                                      Margin="10,0"
+                                      VerticalAlignment="Center" 
+                                      FontSize="18" FontWeight="SemiBold" 
+                                      Cursor="Hand"
+                                      VerticalContentAlignment="Top"
+                                      ItemsSource="{Binding ListaProveedores}" DisplayMemberPath="Nombre"/>
 
-                <ComboBox Grid.Row="2" Grid.Column="1"  Cursor="IBeam" Text="{Binding CurrentProducto.Clase, UpdateSourceTrigger=PropertyChanged}">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                                    <Button x:Name="btnAceptarProveedor" Style="{StaticResource MaterialDesignFlatButton}"
+                                        IsDefault="True" Margin="0,8,8,0" Content="ACEPTAR"
+                                        Command="{Binding AddPToProductCommand}" 
+                                        CommandParameter="{Binding ElementName=cmbListaProveedores, Path=SelectedItem}" >
+                                    </Button>
+                                    
+                                    <Button Style="{StaticResource MaterialDesignFlatButton}" IsCancel="True"
+                                    Margin="0,8,8,0" Content="CANCELAR"
+                                    Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}">
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </materialDesign:DialogHost.DialogContent>
+
+                        <Button x:Name="btnNuevoProveedor" 
+                              Content="{materialDesign:PackIcon Kind=PlaylistAdd, Size=21}"
+                              Style="{StaticResource MaterialDesignFlatButton}"
+                              Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Click="btnNuevoProveedor_Click"/>
+                    </materialDesign:DialogHost>
+                    
+                        <Button Content="{materialDesign:PackIcon AirplaneTakeoff, Size=18}" Click="Button_Click" />
+
+                </StackPanel>
+
+                <ComboBox Grid.Row="2" Grid.Column="1" Foreground="Red" Text="{Binding CurrentProducto.Clase,
+                                                        UpdateSourceTrigger=PropertyChanged}"
+                                                        IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" FontWeight="Bold">
                     <ComboBoxItem Content="Gafas Graduadas"/>
                     <ComboBoxItem Content="Gafas de Sol"/>
                     <ComboBoxItem Content="Gafas Deportivas"/>
@@ -94,7 +140,9 @@
                     <ComboBoxItem Content="Audifonos"/>
                 </ComboBox>
 
-                <ComboBox Grid.Row="3" Grid.Column="1" Cursor="IBeam" Text="{Binding CurrentProducto.Marca, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBox Grid.Row="3" Grid.Column="1" Foreground="Red" Text="{Binding CurrentProducto.Marca,
+                                                        UpdateSourceTrigger=PropertyChanged}"
+                                                        IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" FontWeight="Bold">
                     <ComboBoxItem Content="Arnette"/>
                     <ComboBoxItem Content="Bvlgari"/>
                     <ComboBoxItem Content="Carrera"/>
@@ -107,7 +155,9 @@
                     <ComboBoxItem Content="Ray-Ban"/>
                 </ComboBox>
 
-                <ComboBox Grid.Row="4" Grid.Column="1" Cursor="IBeam" Text="{Binding CurrentProducto.Tipo, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBox Grid.Row="4" Grid.Column="1" Foreground="Red" Text="{Binding CurrentProducto.Tipo,
+                                                        UpdateSourceTrigger=PropertyChanged}"
+                                                        IsEnabled="{Binding ElementName=vista, Path=EditarActivado}" FontWeight="Bold">
                     <ComboBoxItem Content="Montura de Metal"/>
                     <ComboBoxItem Content="Montura de Plastico"/>
                     <ComboBoxItem Content="Lentillas Blandas"/>
@@ -117,23 +167,23 @@
                     <ComboBoxItem Content="Gafas Progresivas"/>
                 </ComboBox>
 
-                <TextBox Grid.Row="5" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProducto.Referencia, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Referencia, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBox Grid.Row="6" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProducto.Descripcion, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Descripcion, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBox Grid.Row="7" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProducto.Precio, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Precio, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <DatePicker Grid.Row="8" Grid.Column="1" Cursor="IBeam" SelectedDate="{Binding CurrentProducto.FechaEntrada, StringFormat=dd/MM/yyyy, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker Grid.Row="8" Grid.Column="1" Foreground="Red" FontWeight="Bold" SelectedDate="{Binding CurrentProducto.FechaEntrada, StringFormat=dd/MM/yyyy, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBox Grid.Row="9" Grid.Column="1" TextAlignment="Left" Cursor="IBeam" Text="{Binding CurrentProducto.Stock, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Stock, UpdateSourceTrigger=PropertyChanged}"/>
 
             </Grid>
 
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btCrearProducto" Content="CREAR" Width="90" HorizontalAlignment="Center" Margin="10" Command="{Binding NewProductoCommand}"/>
-                <Button x:Name="btEditarProducto" Content="EDITAR" Width="90" HorizontalAlignment="Center" Margin="10" Command="{Binding NewProductoCommand}"/>
-                <Button x:Name="btGuardarProducto" Content="GUARDAR" Width="90" HorizontalAlignment="Center" Margin="10" Command="{Binding NewProductoCommand}"/>
-                <Button x:Name="btBorrarProducto" Content="BORRAR" Width="90" HorizontalAlignment="Center" Margin="10" Command="{Binding NewProductoCommand}"/>
+                <Button x:Name="btCrearProducto" Content="CREAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding NewProductoCommand}" Background="#FF460DAB" Cursor="Hand"></Button>
+                <Button x:Name="btEditarProducto" Content="EDITAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Click="btEditarProducto_Click" Background="#FF460DAB" />
+                <Button x:Name="btGuardarProducto" Content="GUARDAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Click="btGuardarProducto_Click" Background="#FF460DAB" />
+                <Button x:Name="btBorrarProducto" Content="BORRAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding DeleteProductoCommand}" Click="btBorrarProducto_Click" Background="#FF460DAB"/>
             </StackPanel>
         </StackPanel>
 

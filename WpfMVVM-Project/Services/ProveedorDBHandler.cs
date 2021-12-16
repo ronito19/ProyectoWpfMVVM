@@ -10,7 +10,7 @@ namespace WpfMVVM_Project.Services
 {
     public class ProveedorDBHandler
     {
-        private static ObservableCollection<ProveedoresModel> listaProveedores = new ObservableCollection<ProveedoresModel>();
+        public static ObservableCollection<ProveedoresModel> listaProveedores = new ObservableCollection<ProveedoresModel>();
 
         public static void CargarListaSupuesta()
         {
@@ -29,13 +29,13 @@ namespace WpfMVVM_Project.Services
 
 
 
-        public static bool NuevoProveedor(ProveedoresModel proveedor)
+        public static bool NuevoProveedor(ProveedoresModel p)
         {
             bool OKinsertar = false;
 
             try
             {
-                listaProveedores.Add(proveedor);
+                listaProveedores.Add(p);
                 OKinsertar = true;
             }
             catch (Exception) { }

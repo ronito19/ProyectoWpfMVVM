@@ -39,7 +39,6 @@ namespace WpfMVVM_Project.ViewModels
         {
             SelectedViewModel = new ViewModelBase();
             UpdateViewCommand = new UpdateViewCommand(this);
-            //SelectedViewModel = new ProveedoresViewModel();
             Productos = new ProductosModel();
 
         }

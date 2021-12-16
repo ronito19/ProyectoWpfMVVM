@@ -18,10 +18,17 @@ namespace WpfMVVM_Project.Services
         {
             listaProductos = new ObservableCollection<ProductosModel>();
 
-            for (int i = 100; i < 110; i++)
+            var random = new Random();
+
+            for (int i = 001; i < 006; i++)
             {
                 ProductosModel pro = new ProductosModel();
                 pro._Id = i.ToString();
+                pro.Proveedor = "Proveedor" + i.ToString();
+                pro.Clase = "Gafas Graduadas";
+                pro.Marca = "Gucci";
+                pro.Tipo = "Lentillas Blandas";
+                pro.FechaEntrada = DateTime.Today;
                 listaProductos.Add(pro);
             }
         }
@@ -43,6 +50,44 @@ namespace WpfMVVM_Project.Services
             }
             return OKinsertar;
         }
+
+
+
+        public static bool EditProducto(ProductosModel productos)
+        {
+            bool okGuardar = false;
+            foreach (ProductosModel pd in listaProductos)
+            {
+                if (pd._Id.Equals(productos._Id)) 
+                {
+                    pd._Id = productos._Id;
+                    pd.Proveedor = productos.Proveedor;
+                    pd.Clase = productos.Clase;
+                    pd.Marca = productos.Marca;
+                    pd.Tipo = productos.Tipo;
+                    okGuardar = true;
+                }
+            }
+            return okGuardar;
+        }
+
+
+
+
+        public static int BorrarProducto(ProductosModel productos)
+        {
+            foreach (ProductosModel pd in listaProductos)
+            {
+                if (pd._Id.Equals(productos._Id))
+                {
+                    int index = listaProductos.IndexOf(pd);
+                    return index;
+                }
+            }
+            return -1;
+        }
+
+
 
 
         public static ObservableCollection<ProductosModel> ObtenerListaProductos()

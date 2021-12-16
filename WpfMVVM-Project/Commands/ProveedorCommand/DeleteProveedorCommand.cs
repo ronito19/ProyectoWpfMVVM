@@ -30,16 +30,16 @@ namespace WpfMVVM_Project.Commands.ProveedorCommand
 
                 if (accion.Equals("borrar"))
                 {
-                    int index = ProveedorDBHandler.BorrarProveedor(proveedoresViewModel.CurrentProveedor);
-                    proveedoresViewModel.listaProveedores.RemoveAt(index);
-                    proveedoresViewModel.CurrentProveedor = new Models.ProveedoresModel();
+                    int index = ProveedorDBHandler.BorrarProveedor(proveedoresTableViewModel.CurrentProveedor);
+                    proveedoresTableViewModel.ListaProveedores.RemoveAt(index);
+                    proveedoresTableViewModel.CurrentProveedor = new Models.ProveedoresModel();
                 }
 
                 if (parameter is ProveedoresModel)
                 {
                     ProveedoresModel proveedor = (ProveedoresModel)parameter;
-                    proveedoresViewModel.CurrentProveedor = (ProveedoresModel)proveedor.Clone();
-                    proveedoresViewModel.SelectedProveedor = (ProveedoresModel)proveedor.Clone();
+                    proveedoresTableViewModel.CurrentProveedor = (ProveedoresModel)proveedor.Clone();
+                    proveedoresTableViewModel.SelectedProveedor = (ProveedoresModel)proveedor.Clone();
                 }
             }
         }
@@ -47,16 +47,14 @@ namespace WpfMVVM_Project.Commands.ProveedorCommand
 
 
 
-        private ProveedoresViewModel proveedoresViewModel;
-        public DeleteProveedorCommand(ProveedoresViewModel proveedoresViewModel)
+   
+        private ProveedoresTableViewModel proveedoresTableViewModel;
+
+   
+
+        public DeleteProveedorCommand(ProveedoresTableViewModel proveedoresTableViewModel)
         {
-            this.proveedoresViewModel = proveedoresViewModel;
+            this.proveedoresTableViewModel = proveedoresTableViewModel;
         }
-
-
-
-
-
-        
     }
 }

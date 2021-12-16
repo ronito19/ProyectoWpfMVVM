@@ -74,7 +74,10 @@ namespace WpfMVVM_Project.Models
             }
         }
 
-
+        internal ProductosModel Clone()
+        {
+            throw new NotImplementedException();
+        }
 
         private string marca;
 

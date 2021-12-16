@@ -31,6 +31,25 @@ namespace WpfMVVM_Project.ViewModels
 
 
 
+        private ObservableCollection<ProductosModel> listaProveedores { get; set; }
+
+
+        public ObservableCollection<ProductosModel> ListaProveedores
+        {
+            get
+            {
+                return listaProveedores;
+            }
+            set
+            {
+                listaProveedores = value;
+                OnPropertyChanged(nameof(ListaProveedores));
+            }
+        }
+
+
+
+
         public ICommand LoadProductosCommand { get; set; }
 
 
@@ -40,6 +59,18 @@ namespace WpfMVVM_Project.ViewModels
 
 
         public ICommand NewProductoCommand { get; set; }
+
+
+
+        public ICommand DeleteProductoCommand { get; set; }
+
+
+
+        public ICommand AddPToProductCommand { get; set; }
+
+
+
+        public ProductosModel SelectedProductos { get; set; }
 
 
 
@@ -68,7 +99,9 @@ namespace WpfMVVM_Project.ViewModels
             LoadProductoCommand = new LoadProductoCommand(this);
             LoadProductosCommand = new LoadProductosCommand(this);
             CurrentProducto = new ProductosModel();
-            //NewProductoCommand = new NewProductoCommand(this);
+            NewProductoCommand = new NewProductoCommand(this);
+            DeleteProductoCommand = new DeleteProductoCommand(this);
+            AddPToProductCommand = new AddPToProductCommand(this);
         }
     }
 }

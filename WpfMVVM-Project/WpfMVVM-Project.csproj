@@ -69,6 +69,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\ProductoCommand\AddPToProductCommand.cs" />
+    <Compile Include="Commands\ProductoCommand\DeleteProductoCommand.cs" />
     <Compile Include="Commands\ProductoCommand\LoadProductoCommand.cs" />
     <Compile Include="Commands\ProductoCommand\LoadProductosCommand.cs" />
     <Compile Include="Commands\ProductoCommand\NewProductoCommand.cs" />
@@ -82,7 +84,6 @@
     <Compile Include="Models\INotifypropertyChanged.cs" />
     <Compile Include="Models\ProductosModel.cs" />
     <Compile Include="Models\ProveedoresModel.cs" />
-    <Compile Include="Models\TestModel.cs" />
     <Compile Include="Services\ProductoDBHandler.cs" />
     <Compile Include="Services\ProveedorDBHandler.cs" />
     <Compile Include="ViewModels\GafasViewModel.cs" />
@@ -92,9 +93,7 @@
     <Compile Include="ViewModels\Nuevo-ProductosViewModel.cs" />
     <Compile Include="ViewModels\PaginaPrincipalViewModel.cs" />
     <Compile Include="ViewModels\ProductosTableViewModel.cs" />
-    <Compile Include="ViewModels\ProductosViewModel.cs" />
     <Compile Include="ViewModels\ProveedoresTableViewModel.cs" />
-    <Compile Include="ViewModels\ProveedoresViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\Nuevo-Edit-Productos.xaml.cs">
       <DependentUpon>Nuevo-Edit-Productos.xaml</DependentUpon>
@@ -105,14 +104,8 @@
     <Compile Include="Views\ProductosTableView.xaml.cs">
       <DependentUpon>ProductosTableView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductosView.xaml.cs">
-      <DependentUpon>ProductosView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ProveedoresTableView.xaml.cs">
       <DependentUpon>ProveedoresTableView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProveedoresView.xaml.cs">
-      <DependentUpon>ProveedoresView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -138,15 +131,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProductosView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\ProveedoresTableView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ProveedoresView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,7 +175,9 @@
   <ItemGroup>
     <Resource Include="Views\optica.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Imagenes\gafasol.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

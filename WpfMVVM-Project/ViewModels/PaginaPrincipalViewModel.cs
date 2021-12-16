@@ -8,5 +8,6 @@ namespace WpfMVVM_Project.ViewModels
 {
     public class PaginaPrincipalViewModel : ViewModelBase
     {
+
     }
 }

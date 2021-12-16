@@ -21,7 +21,7 @@ namespace WpfMVVM_Project.Commands.ProveedorCommand
 
         public void Execute(object parameter)
         {
-            bool OKinsertar = ProveedorDBHandler.NuevoProveedor(proveedoresViewModel.CurrentProveedor);
+            bool OKinsertar = ProveedorDBHandler.NuevoProveedor(proveedoresTableViewModel.CurrentProveedor);
             if (OKinsertar)
             {
                 MessageBox.Show(" Se ha creado el proveedor ");
@@ -33,10 +33,10 @@ namespace WpfMVVM_Project.Commands.ProveedorCommand
         }
 
 
-        private ProveedoresViewModel proveedoresViewModel;
-        public NewProveedorCommand(ProveedoresViewModel proveedoresViewModel)
+        private ProveedoresTableViewModel proveedoresTableViewModel;
+        public NewProveedorCommand(ProveedoresTableViewModel proveedoresTableViewModel)
         {
-            this.proveedoresViewModel = proveedoresViewModel;
+            this.proveedoresTableViewModel = proveedoresTableViewModel;
         }
     }
 }

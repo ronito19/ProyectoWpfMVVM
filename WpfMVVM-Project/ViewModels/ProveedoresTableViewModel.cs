@@ -35,6 +35,12 @@ namespace WpfMVVM_Project.ViewModels
         public ICommand LoadProveedorCommand { get; set; }
 
 
+        public ICommand DeleteProveedorCommand { get; set; }
+
+
+        public ProveedoresModel SelectedProveedor { get; set; }
+
+
 
 
         private ProveedoresModel currentProveedor { get; set; }
@@ -60,6 +66,7 @@ namespace WpfMVVM_Project.ViewModels
             LoadProveedoresCommand = new LoadProveedoresCommand(this);
             LoadProveedorCommand = new LoadProveedorCommand(this);
             CurrentProveedor = new ProveedoresModel();
+            DeleteProveedorCommand = new DeleteProveedorCommand(this);
         }
     }
 }

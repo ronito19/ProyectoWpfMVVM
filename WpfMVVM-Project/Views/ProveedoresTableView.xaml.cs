@@ -102,10 +102,16 @@ namespace WpfMVVM_Project.Views
             E01MostrarDatos();
         }
 
+
+
+
         private void btnEditarDatos_Click(object sender, RoutedEventArgs e)
         {
             E02ModificarDatos();
         }
+
+
+
 
         private void btnBorrarDatos_Click(object sender, RoutedEventArgs e)
         {
@@ -128,6 +134,10 @@ namespace WpfMVVM_Project.Views
             proveedorListView.IsEnabled = true;
         }
 
+
+        
+        
+        
         private void btnGuardarDatos_Click(object sender, RoutedEventArgs e)
         {
             E01MostrarDatos();

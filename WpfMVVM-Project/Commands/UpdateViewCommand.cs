@@ -32,12 +32,14 @@ namespace WpfMVVM_Project.Commands
             {
                 MainViewModel.SelectedViewModel = new GafasViewModel();
             }
-            else if (vista.Equals("proveedores"))
+            else if (vista.Equals("proveedores") && !vista.Equals(CurrentVista))
             {
+                CurrentVista = vista;
                 MainViewModel.SelectedViewModel = new ProveedoresTableViewModel();
             }
-            else if (vista.Equals("productos"))
+            else if (vista.Equals("productos") && !vista.Equals(CurrentVista))
             {
+                CurrentVista = vista;
                 MainViewModel.SelectedViewModel = new ProductosTableViewModel();
             }
             
@@ -46,10 +48,15 @@ namespace WpfMVVM_Project.Commands
 
 
         public MainViewModel MainViewModel { get; set; }
+
+        string CurrentVista { get; set; }
+
+
         public UpdateViewCommand(MainViewModel mainViewModel)
         {
             MainViewModel = mainViewModel;
             MainViewModel.SelectedViewModel = new HomeViewModel();
+
         }
     }
 }

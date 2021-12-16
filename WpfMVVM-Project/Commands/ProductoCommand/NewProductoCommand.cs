@@ -21,7 +21,7 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
 
         public void Execute(object parameter)
         {
-            bool OKinsertar = ProductoDBHandler.NuevoProducto(productosViewModel.CurrentProducto);
+            bool OKinsertar = ProductoDBHandler.NuevoProducto(productosTableViewModel.CurrentProducto);
             if (OKinsertar)
             {
                 MessageBox.Show(" Se ha creado el producto ");
@@ -34,15 +34,14 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
 
 
 
-        private ProductosViewModel productosViewModel;
+       
 
         private ProductosTableViewModel productosTableViewModel;
 
-        public NewProductoCommand(ProductosViewModel productosViewModel)
-        {
-            this.productosViewModel = productosViewModel;
-        }
 
-        
+        public NewProductoCommand(ProductosTableViewModel productosTableViewModel)
+        {
+            this.productosTableViewModel = productosTableViewModel;
+        }
     }
 }

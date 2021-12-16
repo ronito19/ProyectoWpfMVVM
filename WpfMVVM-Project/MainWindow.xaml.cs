@@ -74,7 +74,7 @@ namespace WpfMVVM_Project
 
         private void btPrincipal_Click(object sender, RoutedEventArgs e)
         {
-            
+            DataContext = new MainViewModel();
         }
 
 
