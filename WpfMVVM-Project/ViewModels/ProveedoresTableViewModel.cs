@@ -10,7 +10,7 @@ using WpfMVVM_Project.Models;
 
 namespace WpfMVVM_Project.ViewModels
 {
-    class ProveedoresTableViewModel : ViewModelBase
+    public class ProveedoresTableViewModel : ViewModelBase
     {
 
         private ObservableCollection<ProveedoresModel> listaProveedores { get; set; }
@@ -43,6 +43,7 @@ namespace WpfMVVM_Project.ViewModels
 
 
 
+
         private ProveedoresModel currentProveedor { get; set; }
 
         public ProveedoresModel CurrentProveedor 
@@ -57,6 +58,8 @@ namespace WpfMVVM_Project.ViewModels
                 OnPropertyChanged(nameof(CurrentProveedor));
             }
         }
+
+
 
 
 

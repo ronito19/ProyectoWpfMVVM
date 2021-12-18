@@ -150,7 +150,7 @@ namespace WpfMVVM_Project.Views
             productoListView.IsEnabled = true;
         }
 
-        private void btnNuevoProveedor_Click(object sender, RoutedEventArgs e)
+        private void btnAceptarProveedor_Click(object sender, RoutedEventArgs e)
         {
             dialogProveedores.IsOpen = false;
             cmbListaProveedores.SelectedIndex = cmbListaProveedores.Items.Count;
@@ -159,6 +159,12 @@ namespace WpfMVVM_Project.Views
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnNuevoProveedor_Click(object sender, RoutedEventArgs e)
+        {
+            dialogProveedores.IsOpen = false;
+            cmbListaProveedores.SelectedIndex = cmbListaProveedores.Items.Count;
         }
     }
 }

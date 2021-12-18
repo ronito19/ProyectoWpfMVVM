@@ -11,8 +11,8 @@ namespace WpfMVVM_Project.Services
     public class ProductoDBHandler
     {
         private static ObservableCollection<ProductosModel> listaProductos = new ObservableCollection<ProductosModel>();
-
-
+        
+        private static ObservableCollection<string> listaProveedores = new ObservableCollection<string>();
 
         public static void CargarListaFicticia()
         {
@@ -24,7 +24,7 @@ namespace WpfMVVM_Project.Services
             {
                 ProductosModel pro = new ProductosModel();
                 pro._Id = i.ToString();
-                pro.Proveedor = "Proveedor" + i.ToString();
+                pro.Proveedor.Add("Proveedor 1");
                 pro.Clase = "Gafas Graduadas";
                 pro.Marca = "Gucci";
                 pro.Tipo = "Lentillas Blandas";
@@ -33,6 +33,7 @@ namespace WpfMVVM_Project.Services
             }
         }
 
+        
 
 
         public static bool NuevoProducto(ProductosModel productos)
@@ -94,5 +95,50 @@ namespace WpfMVVM_Project.Services
         {
             return listaProductos;
         }
+
+
+
+        public static bool NuevoProveedor(string proveedor)
+        {
+            bool OKinsertar = false;
+
+            try
+            {
+                listaProveedores.Add(proveedor);
+                OKinsertar = true;
+            }
+            catch (Exception)
+            {
+
+            }
+            return OKinsertar;
+        }
+
+
+
+        public static bool NuevoProveedor(ObservableCollection<string> proveedor)
+        {
+            bool OKinsertar = false;
+
+            try
+            {
+                listaProveedores.Add("Proveedor 1");
+                OKinsertar = true;
+            }
+            catch (Exception)
+            {
+
+            }
+            return OKinsertar;
+        }
+
+
+
+        public static ObservableCollection<string> ObtenerListaProveedores()
+        {
+            return listaProveedores;
+        }
+
+
     }
 }

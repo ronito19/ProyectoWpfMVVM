@@ -96,6 +96,7 @@ namespace WpfMVVM_Project.ViewModels
         public ProductosTableViewModel()
         {
             ListaProductos = new ObservableCollection<ProductosModel>();
+            ListaProveedores = new ObservableCollection<ProductosModel>();
             LoadProductoCommand = new LoadProductoCommand(this);
             LoadProductosCommand = new LoadProductosCommand(this);
             CurrentProducto = new ProductosModel();

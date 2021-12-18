@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -7,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace WpfMVVM_Project.Models
 {
-    public class ProductosModel : INotifypropertyChanged
+    public class ProductosModel 
     {
-
+        public ProductosModel()
+        {
+            Proveedor = new ObservableCollection<string>();
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -42,9 +46,9 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private string proveedor;
+        private ObservableCollection<string> proveedor;
 
-        public string Proveedor
+        public ObservableCollection<string> Proveedor
         {
             get
             {

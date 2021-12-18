@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WpfMVVM_Project.Services;
 using WpfMVVM_Project.ViewModels;
 
 namespace WpfMVVM_Project.Commands.ProductoCommand
@@ -20,9 +22,12 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
             return true;
         }
 
+
+        public ObservableCollection<string> proveedor { get; set; }
+
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            bool OKinsertar = ProductoDBHandler.NuevoProveedor(proveedor);
         }
 
 

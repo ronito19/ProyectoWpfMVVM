@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Web.UI.WebControls;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WpfMVVM_Project.Models;
 using WpfMVVM_Project.Services;
+using System.Windows.Forms;
+using UserControl = System.Windows.Forms.UserControl;
+using System.Windows.Controls;
 
 namespace WpfMVVM_Project.Views
 {
@@ -76,6 +67,8 @@ namespace WpfMVVM_Project.Views
             btnGuardarDatos.Visibility = Visibility.Collapsed;
             btnBorrarDatos.Visibility = Visibility.Collapsed;
             btnEditarDatos.Visibility = Visibility.Visible;
+            btnCrearDatos.Visibility = Visibility.Visible;
+            btnAtras.Visibility = Visibility.Collapsed;
 
             proveedorListView.IsEnabled = true;
 
@@ -85,6 +78,22 @@ namespace WpfMVVM_Project.Views
 
 
         public void E02ModificarDatos()
+        {
+            btnGuardarDatos.Visibility = Visibility.Visible;
+            btnBorrarDatos.Visibility = Visibility.Visible;
+            btnEditarDatos.Visibility = Visibility.Collapsed;
+            btnCrearDatos.Visibility = Visibility.Collapsed;
+            btnAtras.Visibility = Visibility.Visible;
+
+            proveedorListView.IsEnabled = false;
+
+            EditarActivado = true;
+        }
+
+
+
+
+        public void E03CrearDatos()
         {
             btnGuardarDatos.Visibility = Visibility.Visible;
             btnBorrarDatos.Visibility = Visibility.Visible;
@@ -144,6 +153,38 @@ namespace WpfMVVM_Project.Views
             MessageBoxResult mensaje = MessageBox.Show(" Deseas guardar los cambios al modificarlo? ", " MODIFICAR PROVEEDOR ", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             proveedorListView.IsEnabled = true;
+        }
+
+
+
+
+        private bool ValidarCampos()
+        {
+            bool ok = true;
+
+            if (TextBox.TextProperty == "")
+            {
+                
+            }
+        }
+
+
+
+        private void btnCrearDatos_Click(object sender, RoutedEventArgs e)
+        {
+            E02ModificarDatos();
+            proveedorListView.SelectedIndex = proveedorListView.Items.Count;
+
+            
+        }
+
+       
+            
+
+        private void btnAtras_Click(object sender, RoutedEventArgs e)
+        {
+            E01MostrarDatos();
+            
         }
     }
 }

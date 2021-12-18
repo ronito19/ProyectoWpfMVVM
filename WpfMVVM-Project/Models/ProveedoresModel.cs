@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfMVVM_Project.ViewModels;
 
 namespace WpfMVVM_Project.Models
 {
@@ -72,10 +73,16 @@ namespace WpfMVVM_Project.Models
         {
             throw new NotImplementedException();
         }
+       
+
+        
+
+        public ProveedoresModel()
+        {
+        }
+
 
         private int telefono;
-        internal static object listaProveedores;
-
         public int Telefono
         {
             get
@@ -90,6 +97,15 @@ namespace WpfMVVM_Project.Models
             }
         }
 
-     
+
+        public ProveedoresModel currentProveedor { get; set; }
+
+        public static object listaProveedores;
+
+
+        
+
+
+        
     }
 }
