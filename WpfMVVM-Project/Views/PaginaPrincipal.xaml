@@ -12,7 +12,7 @@
     <StackPanel x:Name="paginaPrincipal" Visibility="Visible">
         
         <StackPanel.Background>
-            <ImageBrush ImageSource="optica.png"/>
+            <ImageBrush ImageSource="/WpfMVVM-Project;component/Imagenes/fotocromatici-lente.png"/>
         </StackPanel.Background>
         <TextBox Text="SuperLentes" BorderBrush="White" FontSize="30" FontFamily="Reem Kufi" FontWeight="Bold" Margin="20" TextAlignment="Center"/>
 

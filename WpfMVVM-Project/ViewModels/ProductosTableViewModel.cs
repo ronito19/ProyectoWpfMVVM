@@ -10,7 +10,7 @@ using WpfMVVM_Project.Models;
 
 namespace WpfMVVM_Project.ViewModels
 {
-    class ProductosTableViewModel : ViewModelBase
+    public class ProductosTableViewModel : ViewModelBase
     {
 
         private ObservableCollection<ProductosModel> listaProductos { get; set; }

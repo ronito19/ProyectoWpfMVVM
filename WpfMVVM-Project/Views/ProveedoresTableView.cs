@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Web.UI.WebControls;
 using System.Windows;
 using WpfMVVM_Project.Models;
@@ -6,6 +7,7 @@ using WpfMVVM_Project.Services;
 using System.Windows.Forms;
 using UserControl = System.Windows.Forms.UserControl;
 using System.Windows.Controls;
+using MessageBox = System.Windows.MessageBox;
 
 namespace WpfMVVM_Project.Views
 {
@@ -158,15 +160,7 @@ namespace WpfMVVM_Project.Views
 
 
 
-        private bool ValidarCampos()
-        {
-            bool ok = true;
-
-            if (TextBox.TextProperty == "")
-            {
-                
-            }
-        }
+        
 
 
 
