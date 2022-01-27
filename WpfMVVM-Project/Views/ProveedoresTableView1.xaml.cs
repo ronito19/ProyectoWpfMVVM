@@ -1,30 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Web.UI.WebControls;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 using WpfMVVM_Project.Models;
 using WpfMVVM_Project.Services;
-using System.Windows.Forms;
-using UserControl = System.Windows.Forms.UserControl;
-using System.Windows.Controls;
-using MessageBox = System.Windows.MessageBox;
 
 namespace WpfMVVM_Project.Views
 {
     /// <summary>
-    /// Lógica de interacción para ProveedoresTableView.xaml
+    /// Lógica de interacción para ProveedoresTableView1.xaml
     /// </summary>
-    public partial class ProveedoresTableView : UserControl, INotifyPropertyChanged
+    public partial class ProveedoresTableView1 : UserControl, INotifyPropertyChanged
     {
-        public ProveedoresTableView()
+        public ProveedoresTableView1()
         {
             InitializeComponent();
             E00Estadoinicial();
         }
 
 
-
         public event PropertyChangedEventHandler PropertyChanged;
+
 
         private void OnPropertyChanged(string propertyName = null)
         {
@@ -38,9 +45,9 @@ namespace WpfMVVM_Project.Views
 
         private bool editarActivado;
 
-        public bool EditarActivado 
+        public bool EditarActivado
         {
-            get 
+            get
             {
                 return editarActivado;
             }
@@ -126,11 +133,11 @@ namespace WpfMVVM_Project.Views
 
         private void btnBorrarDatos_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MessageBoxResult mensaje = MessageBox.Show(" Deseas borrar al proveedor? ", " BORRAR PROVEEDOR ", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            
+
             switch (mensaje)
-                { 
+            {
                 case MessageBoxResult.Yes:
                     ProveedoresModel listaProveedores = (ProveedoresModel)proveedorListView.SelectedItem;
                     ProveedorDBHandler.BorrarProveedor(listaProveedores);
@@ -140,15 +147,15 @@ namespace WpfMVVM_Project.Views
 
                 case MessageBoxResult.No:
                     break;
-                }
+            }
             E01MostrarDatos();
             proveedorListView.IsEnabled = true;
         }
 
 
-        
-        
-        
+
+
+
         private void btnGuardarDatos_Click(object sender, RoutedEventArgs e)
         {
             E01MostrarDatos();
@@ -160,7 +167,7 @@ namespace WpfMVVM_Project.Views
 
 
 
-        
+
 
 
 
@@ -169,16 +176,19 @@ namespace WpfMVVM_Project.Views
             E02ModificarDatos();
             proveedorListView.SelectedIndex = proveedorListView.Items.Count;
 
-            
+
         }
 
-       
-            
+
+
 
         private void btnAtras_Click(object sender, RoutedEventArgs e)
         {
             E01MostrarDatos();
-            
+
         }
+
+
+
     }
 }

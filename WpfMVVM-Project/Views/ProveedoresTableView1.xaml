@@ -1,12 +1,13 @@
-﻿<UserControl x:Class="WpfMVVM_Project.Views.ProveedoresTableView"
+﻿<UserControl x:Class="WpfMVVM_Project.Views.ProveedoresTableView1"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:local="clr-namespace:WpfMVVM_Project.Views"
              x:Name="vista"
-             mc:Ignorable="d" Height="600" Width="900" >
+             mc:Ignorable="d" Height="600" d:DesignWidth="900">
+
 
 
     <i:Interaction.Triggers>
@@ -85,6 +86,5 @@
                 <Button x:Name="btnAtras" Content="ATRAS" Width="60" HorizontalAlignment="Center" Margin="2" Click="btnAtras_Click" Background="#FF460DAB" FontSize="8"/>
             </StackPanel>
         </StackPanel>
-
     </Grid>
 </UserControl>
