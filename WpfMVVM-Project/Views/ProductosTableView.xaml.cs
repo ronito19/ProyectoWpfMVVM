@@ -67,6 +67,8 @@ namespace WpfMVVM_Project.Views
             stackDatosProductos.Visibility = Visibility.Collapsed;
 
             EditarActivado = false;
+
+            txWarning.Text = "";
         }
 
 
@@ -83,6 +85,8 @@ namespace WpfMVVM_Project.Views
             productoListView.IsEnabled = true;
 
             EditarActivado = false;
+
+            txWarning.Text = "";
         }
 
 

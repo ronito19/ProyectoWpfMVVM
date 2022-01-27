@@ -177,6 +177,8 @@
                 <TextBox Grid.Row="9" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Stock, UpdateSourceTrigger=PropertyChanged}"/>
 
             </Grid>
+            
+            <TextBlock x:Name="txWarning" Text="WARNING" Foreground="Red" TextAlignment="Center" FontWeight="Bold" FontSize="14" Height="25" Margin="0,0,0.4,0"/>
 
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="btCrearProducto" Content="CREAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding NewProductoCommand}" Background="#FF460DAB" Cursor="Hand"></Button>
