@@ -27,18 +27,18 @@ namespace WpfMVVM_Project.Models
 
 
 
-        private string _id;
+        private string id;
 
-        public string _Id
+        public string _id
         {
             get
             {
-                return _id;
+                return id;
             }
             set
             {
-                _id = value;
-                OnPropertyChanged(nameof(_Id));
+                id = value;
+                OnPropertyChanged(nameof(_id));
                 
             }
 
@@ -78,9 +78,11 @@ namespace WpfMVVM_Project.Models
             }
         }
 
-        internal ProductosModel Clone()
+        public object Clone()
         {
-            throw new NotImplementedException();
+
+            return MemberwiseClone();
+
         }
 
         private string marca;

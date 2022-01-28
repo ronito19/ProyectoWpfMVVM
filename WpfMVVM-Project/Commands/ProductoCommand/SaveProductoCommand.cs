@@ -26,7 +26,7 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
             ProductosTableView vista = (ProductosTableView)parameter;
 
             Console.WriteLine("FECHA: " + vista.datePickerFecha.Text);
-            Console.WriteLine("MARCA: " + ProductosTableViewModel.CurrentProducto.Marca);
+            Console.WriteLine("MARCA: " + productosTableViewModel.CurrentProducto.Marca);
             //Console.WriteLine(studentTableViewModel.CurrentStudent.Fecha);
 
             if (vista.datePickerFecha.Text.Equals(""))
@@ -45,7 +45,7 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
                 {
                     case MessageBoxResult.Yes:
                         RequestModel requestModel = new RequestModel();
-                        requestModel.route = "/productos";
+                        requestModel.route = "/students";
                         requestModel.method = "PUT";
                         requestModel.data = productosTableViewModel.CurrentProducto;
                         ResponseModel responseModel = await APIHandler.ConsultAPI(requestModel);
@@ -54,7 +54,7 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
                         {
 
                             vista.E01MostrarDatosProductos1();
-                            productosTableViewModel.LoadProductoCommand.Execute("");
+                            productosTableViewModel.LoadProductosCommand.Execute("");
                         }
 
                         MessageBox.Show((string)responseModel.data, "Modificar", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -42,7 +42,7 @@
 
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="COD. B" DisplayMemberBinding="{Binding Path=_Id}"/>
+                        <GridViewColumn Header="COD. B" DisplayMemberBinding="{Binding Path=_id}"/>
                         <GridViewColumn Header="CLASE" DisplayMemberBinding="{Binding Path=Clase}"/>
                         <GridViewColumn Header="MARCA" DisplayMemberBinding="{Binding Path=Marca}"/>
                         <GridViewColumn Header="TIPO" DisplayMemberBinding="{Binding Path=Tipo}"/>
@@ -85,7 +85,7 @@
 
 
 
-                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto._Id, UpdateSourceTrigger=PropertyChanged}" IsEnabled="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto._id, UpdateSourceTrigger=PropertyChanged}" IsEnabled="True"/>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" >
                     <ComboBox  Foreground="Red"   FontWeight="Bold"  Width="60">
@@ -181,10 +181,10 @@
             <TextBlock x:Name="txWarning" Text="WARNING" Foreground="Red" TextAlignment="Center" FontWeight="Bold" FontSize="14" Height="25" Margin="0,0,0.4,0"/>
 
             <StackPanel Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btCrearProducto" Content="CREAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding NewProductoCommand}" Background="#FF460DAB" Cursor="Hand" Click="btCrearProducto_Click"></Button>
-                <Button x:Name="btEditarProducto" Content="EDITAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Click="btEditarProducto_Click" Background="#FF460DAB" />
-                <Button x:Name="btGuardarProducto" Content="GUARDAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Click="btGuardarProducto_Click" Background="#FF460DAB" />
-                <Button x:Name="btBorrarProducto" Content="BORRAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding DeleteProductoCommand}" Click="btBorrarProducto_Click" Background="#FF460DAB"/>
+                <Button x:Name="btCrearProducto" Content="CREAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding NewProductoCommand}" CommandParameter="{Binding ElementName=vista}" Background="#FF460DAB" Cursor="Hand" Click="btCrearProducto_Click"></Button>
+                <Button x:Name="btEditarProducto" Content="EDITAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8"  Click="btEditarProducto_Click" Background="#FF460DAB" />
+                <Button x:Name="btGuardarProducto" Content="GUARDAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding SaveProductoCommand}" CommandParameter="{Binding ElementName=vista}" Click="btGuardarProducto_Click" Background="#FF460DAB" />
+                <Button x:Name="btBorrarProducto" Content="BORRAR" Width="70" HorizontalAlignment="Center" Margin="3" FontSize="8" Command="{Binding DeleteProductoCommand}" CommandParameter="{Binding ElementName=vista}" Click="btBorrarProducto_Click" Background="#FF460DAB"/>
             </StackPanel>
         </StackPanel>
 

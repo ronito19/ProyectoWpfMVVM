@@ -26,7 +26,7 @@ namespace WpfMVVM_Project.Views
         public ProductosTableView()
         {
             InitializeComponent();
-            E00EstadoInicial1();
+            E01MostrarDatosProductos1();
         }
 
 
@@ -79,7 +79,7 @@ namespace WpfMVVM_Project.Views
 
             btGuardarProducto.Visibility = Visibility.Collapsed;
             btBorrarProducto.Visibility = Visibility.Collapsed;
-            btEditarProducto.Visibility = Visibility.Collapsed;
+            btEditarProducto.Visibility = Visibility.Visible;
             btCrearProducto.Visibility = Visibility.Visible;
 
             productoListView.IsEnabled = true;
@@ -136,20 +136,7 @@ namespace WpfMVVM_Project.Views
 
         private void btBorrarProducto_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult mensaje = MessageBox.Show(" Deseas borrar el producto? ", " BORRAR PRODUCTO ", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-            switch (mensaje)
-            {
-                case MessageBoxResult.Yes:
-                    ProductosModel listaProductos = (ProductosModel)productoListView.SelectedItem;
-                    ProductoDBHandler.BorrarProducto(listaProductos);
-
-                    MessageBox.Show(" Producto BORRADO ");
-                    break;
-
-                case MessageBoxResult.No:
-                    break;
-            }
+            
             E01MostrarDatosProductos1();
             productoListView.IsEnabled = true;
         }

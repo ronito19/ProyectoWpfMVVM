@@ -22,10 +22,10 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
 
         public async void Execute(object parameter)
         {
-            bool OKinsertar = ProductoDBHandler.NuevoProducto(productosTableViewModel.CurrentProducto);
+           // bool OKinsertar = ProductoDBHandler.NuevoProducto2(productosTableViewModel.CurrentProducto);
 
             RequestModel requestModel = new RequestModel();
-            requestModel.route = "/productos";
+            requestModel.route = "/students";
             requestModel.method = "POST";
             requestModel.data = productosTableViewModel.CurrentProducto;
             ResponseModel responseModel = await APIHandler.ConsultAPI(requestModel);
@@ -33,6 +33,8 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
             if (responseModel.resultOK)
             {
                 MessageBox.Show("Se ha creado el producto");
+                productosTableViewModel.LoadProductosCommand.Execute("");
+
             }
             else
             {

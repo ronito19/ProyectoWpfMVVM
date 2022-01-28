@@ -70,7 +70,7 @@ namespace WpfMVVM_Project.ViewModels
 
 
 
-        public ICommand SaveProductCommand { get; set; }
+        public ICommand SaveProductoCommand { get; set; }
 
 
 
@@ -107,7 +107,7 @@ namespace WpfMVVM_Project.ViewModels
             NewProductoCommand = new NewProductoCommand(this);
             DeleteProductoCommand = new DeleteProductoCommand(this);
             AddPToProductCommand = new AddPToProductCommand(this);
-            //SaveProductCommand = new SaveProductCommand(this);
+            SaveProductoCommand = new SaveProductoCommand(this);
         }
     }
 }

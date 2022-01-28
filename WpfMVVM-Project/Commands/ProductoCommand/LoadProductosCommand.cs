@@ -26,10 +26,10 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
         public async void Execute(object parameter)
         {
             //ProductoDBHandler.CargarListaFicticia();
-            productosTableViewModel.ListaProductos = ProductoDBHandler.ObtenerListaProductos();
+            //productosTableViewModel.ListaProductos = ProductoDBHandler.ObtenerListaProductos();
 
             RequestModel requestModel = new RequestModel();
-            requestModel.route = "/productos";
+            requestModel.route = "/students";
             requestModel.method = "GET";
             requestModel.data = "all";
 

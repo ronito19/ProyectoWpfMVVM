@@ -37,7 +37,7 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
                         RequestModel requestModel = new RequestModel();
                         requestModel.route = "/students";
                         requestModel.method = "DELETE";
-                        requestModel.data = productosTableViewModel.CurrentProducto._Id;
+                        requestModel.data = productosTableViewModel.CurrentProducto._id;
                         ResponseModel responseModel = await APIHandler.ConsultAPI(requestModel);
 
                         if (responseModel.resultOK)
