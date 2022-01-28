@@ -23,11 +23,11 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
         }
 
 
-        public ObservableCollection<string> proveedor { get; set; }
+        public ObservableCollection<string> producto { get; set; }
 
         public void Execute(object parameter)
         {
-            bool OKinsertar = ProductoDBHandler.NuevoProveedor(proveedor);
+            bool OKinsertar = ProductoDBHandler.NuevoProducto();
         }
 
 

@@ -33,8 +33,10 @@ namespace WpfMVVM_Project.Services
             }
         }
 
-        
-
+        internal static bool NuevoProducto()
+        {
+            throw new NotImplementedException();
+        }
 
         public static bool NuevoProducto(ProductosModel productos)
         {

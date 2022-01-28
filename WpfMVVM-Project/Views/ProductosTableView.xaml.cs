@@ -79,7 +79,7 @@ namespace WpfMVVM_Project.Views
 
             btGuardarProducto.Visibility = Visibility.Collapsed;
             btBorrarProducto.Visibility = Visibility.Collapsed;
-            btEditarProducto.Visibility = Visibility.Visible;
+            btEditarProducto.Visibility = Visibility.Collapsed;
             btCrearProducto.Visibility = Visibility.Visible;
 
             productoListView.IsEnabled = true;
@@ -169,6 +169,11 @@ namespace WpfMVVM_Project.Views
         {
             dialogProveedores.IsOpen = false;
             cmbListaProveedores.SelectedIndex = cmbListaProveedores.Items.Count;
+        }
+
+        private void btCrearProducto_Click(object sender, RoutedEventArgs e)
+        {
+            E01MostrarDatosProductos1();
         }
     }
 }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using WpfMVVM_Project.Models;
 using WpfMVVM_Project.Services;
 using WpfMVVM_Project.ViewModels;
+using WpfMVVM_Project.Views;
 
 namespace WpfMVVM_Project.Commands.ProductoCommand
 {
@@ -21,25 +23,35 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
             return true;
         }
 
-        public void Execute(object parameter)
+        public async void Execute(object parameter)
         {
-            if (parameter is String)
+            if (parameter is ProductosTableView)
             {
-                string accion = parameter.ToString();
-                Console.WriteLine(parameter.ToString());
+                ProductosTableView vista = (ProductosTableView)parameter;
 
-                if (accion.Equals("borrar"))
-                {
-                    int index = ProductoDBHandler.BorrarProducto(productosTableViewModel.CurrentProducto);
-                    productosTableViewModel.ListaProductos.RemoveAt(index);
-                    productosTableViewModel.CurrentProducto = new Models.ProductosModel();
-                }
+                MessageBoxResult result = MessageBox.Show("Deseas borrar este registro?", "Borrar", MessageBoxButton.YesNo, MessageBoxImage.Stop);
 
-                if (parameter is ProductosModel)
+                switch (result)
                 {
-                    ProductosModel productos = (ProductosModel)parameter;
-                    productosTableViewModel.CurrentProducto = (ProductosModel)productos.Clone();
-                    productosTableViewModel.SelectedProductos = (ProductosModel)productos.Clone();
+                    case MessageBoxResult.Yes:
+                        RequestModel requestModel = new RequestModel();
+                        requestModel.route = "/students";
+                        requestModel.method = "DELETE";
+                        requestModel.data = productosTableViewModel.CurrentProducto._Id;
+                        ResponseModel responseModel = await APIHandler.ConsultAPI(requestModel);
+
+                        if (responseModel.resultOK)
+                        {
+                            productosTableViewModel.LoadProductosCommand.Execute("");
+                            vista.productoListView.SelectedIndex = 0;
+                        }
+
+                        MessageBox.Show((string)responseModel.data);
+                        break;
+
+                    case MessageBoxResult.No:
+                        break;
+
                 }
             }
         }

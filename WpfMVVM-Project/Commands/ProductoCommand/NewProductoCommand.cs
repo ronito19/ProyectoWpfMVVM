@@ -22,7 +22,7 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
 
         public async void Execute(object parameter)
         {
-            //bool OKinsertar = ProductoDBHandler.NuevoProducto(productosTableViewModel.CurrentProducto);
+            bool OKinsertar = ProductoDBHandler.NuevoProducto(productosTableViewModel.CurrentProducto);
 
             RequestModel requestModel = new RequestModel();
             requestModel.route = "/productos";

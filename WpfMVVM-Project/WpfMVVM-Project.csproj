@@ -96,6 +96,7 @@
     <Compile Include="Commands\ProductoCommand\LoadProductoCommand.cs" />
     <Compile Include="Commands\ProductoCommand\LoadProductosCommand.cs" />
     <Compile Include="Commands\ProductoCommand\NewProductoCommand.cs" />
+    <Compile Include="Commands\ProductoCommand\SaveProductoCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\CancelProveedorCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\CreateProveedorCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\DeleteProveedorCommand.cs" />
