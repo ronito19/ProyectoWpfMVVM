@@ -28,10 +28,10 @@
         <StackPanel Orientation="Vertical" Grid.Row="1">
             <StackPanel Orientation="Vertical">
 
-                <Button x:Name="btPrincipal" Margin="20,50" Content="PRINCIPAL" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="principal" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold" Click="btPrincipal_Click" />
-                <Button x:Name="btGafas" Margin="20,50" Content="GAFAS" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="gafas" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
-                <Button x:Name="btProveedores" Margin="20,50" Content="PROVEEDORES" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="proveedores" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold" Click="btProveedores_Click"/>
-                <Button x:Name="btProductos" Margin="20,50" Content="PRODUCTOS" Width="120" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="productos" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
+                <Button x:Name="btClientes" Margin="20,50" Content="CLIENTES" Width="150" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="clientes" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold" Click="btClientes_Click" />
+                <Button x:Name="btFormulario" Margin="20,50" Content="FORMULARIO" Width="150" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="formulario" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
+                <Button x:Name="btProveedores" Margin="20,50" Content="PROVEEDORES" Width="150" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="proveedores" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold" Click="btProveedores_Click"/>
+                <Button x:Name="btProductos" Margin="20,50" Content="PRODUCTOS" Width="150" Height="70" Command="{Binding UpdateViewCommand}" CommandParameter="productos" Background="Blue" FontSize="15" Foreground="#FFF9F0F0" FontWeight="Bold"/>
 
             </StackPanel>
 

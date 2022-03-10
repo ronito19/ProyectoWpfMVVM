@@ -109,6 +109,7 @@ namespace WpfMVVM_Project.Views
 
         private void productosListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             E01MostrarDatosProductos1();
         }
 

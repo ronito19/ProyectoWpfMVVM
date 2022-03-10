@@ -24,11 +24,11 @@ namespace WpfMVVM_Project.Commands
         {
             Console.WriteLine(parameter.ToString());
             string vista = parameter.ToString();
-            if (vista.Equals("principal"))
+            if (vista.Equals("clientes"))
             {
                 MainViewModel.SelectedViewModel = new PaginaPrincipalViewModel();
             }
-            else if (vista.Equals("gafas"))
+            else if (vista.Equals("formulario"))
             {
                 MainViewModel.SelectedViewModel = new GafasViewModel();
             }

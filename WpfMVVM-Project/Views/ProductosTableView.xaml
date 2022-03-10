@@ -85,10 +85,10 @@
 
 
 
-                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto._id, UpdateSourceTrigger=PropertyChanged}" IsEnabled="True"/>
+                <TextBox Grid.Row="0" Grid.Column="1" TextAlignment="Left" Foreground="DarkBlue" FontWeight="Bold" Text="{Binding CurrentProducto._id, UpdateSourceTrigger=PropertyChanged}" IsEnabled="True"/>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" >
-                    <ComboBox  Foreground="Red"   FontWeight="Bold"  Width="60">
+                    <ComboBox  Foreground="DarkBlue"   FontWeight="Bold"  Width="60">
                     </ComboBox>
                     <materialDesign:DialogHost x:Name="dialogProveedores" DialogTheme="Light" Grid.Column="2" Grid.Row="2"               >
                         <materialDesign:DialogHost.DialogContent>
@@ -129,7 +129,7 @@
 
                 </StackPanel>
 
-                <ComboBox Grid.Row="2" Grid.Column="1" Foreground="Red" Text="{Binding CurrentProducto.Clase,
+                <ComboBox Grid.Row="2" Grid.Column="1" Foreground="DarkBlue" Text="{Binding CurrentProducto.Clase,
                                                         UpdateSourceTrigger=PropertyChanged}"
                                                          FontWeight="Bold">
                     <ComboBoxItem Content="Gafas Graduadas"/>
@@ -139,7 +139,7 @@
                     <ComboBoxItem Content="Audifonos"/>
                 </ComboBox>
 
-                <ComboBox Grid.Row="3" Grid.Column="1" Foreground="Red" Text="{Binding CurrentProducto.Marca,
+                <ComboBox Grid.Row="3" Grid.Column="1" Foreground="DarkBlue" Text="{Binding CurrentProducto.Marca,
                                                         UpdateSourceTrigger=PropertyChanged}"
                                                         FontWeight="Bold">
                     <ComboBoxItem Content="Arnette"/>
@@ -154,7 +154,7 @@
                     <ComboBoxItem Content="Ray-Ban"/>
                 </ComboBox>
 
-                <ComboBox Grid.Row="4" Grid.Column="1" Foreground="Red" Text="{Binding CurrentProducto.Tipo,
+                <ComboBox Grid.Row="4" Grid.Column="1" Foreground="DarkBlue" Text="{Binding CurrentProducto.Tipo,
                                                         UpdateSourceTrigger=PropertyChanged}"
                                                         FontWeight="Bold">
                     <ComboBoxItem Content="Montura de Metal"/>
@@ -166,15 +166,15 @@
                     <ComboBoxItem Content="Gafas Progresivas"/>
                 </ComboBox>
 
-                <TextBox Grid.Row="5" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Referencia, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="5" Grid.Column="1" TextAlignment="Left" Foreground="DarkBlue" FontWeight="Bold" Text="{Binding CurrentProducto.Referencia, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBox Grid.Row="6" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Descripcion, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="6" Grid.Column="1" TextAlignment="Left" Foreground="DarkBlue" FontWeight="Bold" Text="{Binding CurrentProducto.Descripcion, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <TextBox Grid.Row="7" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Precio, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="7" Grid.Column="1" TextAlignment="Left" Foreground="DarkBlue" FontWeight="Bold" Text="{Binding CurrentProducto.Precio, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <DatePicker x:Name="datePickerFecha" Grid.Row="8" Grid.Column="1" Foreground="Red" FontWeight="Bold" SelectedDate="{Binding CurrentProducto.FechaEntrada, StringFormat=dd/MM/yyyy, UpdateSourceTrigger=PropertyChanged}" />
+                <DatePicker x:Name="datePickerFecha" Grid.Row="8" Grid.Column="1" Foreground="DarkBlue" FontWeight="Bold" SelectedDate="{Binding CurrentProducto.FechaEntrada, StringFormat=dd/MM/yyyy, UpdateSourceTrigger=PropertyChanged}" />
 
-                <TextBox Grid.Row="9" Grid.Column="1" TextAlignment="Left" Foreground="Red" FontWeight="Bold" Text="{Binding CurrentProducto.Stock, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Row="9" Grid.Column="1" TextAlignment="Left" Foreground="DarkBlue" FontWeight="Bold" Text="{Binding CurrentProducto.Stock, UpdateSourceTrigger=PropertyChanged}"/>
 
             </Grid>
             
