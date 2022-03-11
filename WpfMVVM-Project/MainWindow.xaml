@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMVVM_Project"
         mc:Ignorable="d"
-        Title="OPTICA" Height="800" Width="1200">
+        Title="OPTICA" Height="900" Width="1200">
 
     <Grid Opacity="0.8" >
         <Grid.Background >

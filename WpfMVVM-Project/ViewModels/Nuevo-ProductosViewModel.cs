@@ -76,12 +76,16 @@ namespace WpfMVVM_Project.ViewModels
         {
             UpdateFacturasCommand = new UpdateFacturasCommand(this);
 
+            ListaClientes = new ObservableCollection<ClientesModel>();
+
             fecha1 = DateTime.Today;
 
             Productos = new ProductosModel();
         }
 
+        public Nuevo_ProductosViewModel()
+        {
 
-
+        }
     }
 }

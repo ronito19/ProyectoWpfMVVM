@@ -18,7 +18,7 @@
 
 
 
-    <Grid Background="#FFE2BAAB">
+    <Grid Background="MintCream" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="350"/>
@@ -31,7 +31,7 @@
         <TextBlock Text="TABLA  PROVEEDORES" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center" Margin="10"/>
 
         <StackPanel Grid.Row="1" Grid.Column="0"  Margin="20">
-            <ListView x:Name="proveedorListView" ItemsSource="{Binding ListaProveedores}" SelectionChanged="proveedorListView_SelectionChanged">
+            <ListView x:Name="proveedorListView" ItemsSource="{Binding ListaProveedores}" SelectionChanged="proveedorListView_SelectionChanged" Foreground="DarkBlue" FontWeight="Bold">
 
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">

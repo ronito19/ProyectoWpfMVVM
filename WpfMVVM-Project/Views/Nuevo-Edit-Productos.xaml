@@ -6,7 +6,7 @@
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:local="clr-namespace:WpfMVVM_Project.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="950" d:DesignWidth="1050">
+      d:DesignHeight="850" d:DesignWidth="850">
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -15,17 +15,17 @@
     </i:Interaction.Triggers>
 
 
-    <StackPanel>
+    <StackPanel Background="MintCream" >
         <StackPanel>
             <TextBlock Text="FACTURAS" TextAlignment="Center"  FontSize="30" FontWeight="Bold"/>
-            <TextBlock Margin="10" Text="FECHA FACTURA" HorizontalAlignment="Center"/>
-            <DatePicker Margin="350,0,350,50" SelectedDate="{Binding fecha1, StringFormat=dd/MM/yyyy}"/>
+            <TextBlock Margin="5" Text="FECHA FACTURA" HorizontalAlignment="Center"/>
+            <DatePicker Margin="400,0,400,30" SelectedDate="{Binding fecha1, StringFormat=dd/MM/yyyy}"/>
 
         </StackPanel>
         <StackPanel>
             <TextBlock Text="CLIENTES" TextAlignment="Center"  FontSize="30" FontWeight="Bold"/>
             <TextBlock Margin="10" Text="ELIGE UN CLIENTE" HorizontalAlignment="Center"/>
-            <ComboBox Margin="300,0,300,50"  SelectedItem="{Binding SelectedClientes}" ItemsSource="{Binding ListaClientes}">
+            <ComboBox Margin="300,0,300,30"  SelectedItem="{Binding SelectedClientes, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding ListaClientes}">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="DropDownOpened">
                         <i:InvokeCommandAction Command="{Binding UpdateFacturasCommand}"/>
@@ -66,10 +66,10 @@
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="2">
-                    <TextBox Width="100"/>
+                    <TextBox Width="100" TextAlignment="Center"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="3">
-                    <Button Content="AÑADIR" Width="100" Margin="0,0,0,100" Command="{Binding InsertEmpleadoCommand}"/>
+                    <Button Content="AÑADIR" Width="100" Margin="0,0,0,80" Command="{Binding InsertEmpleadoCommand}"/>
                 </StackPanel>
             </Grid>
         </StackPanel>
@@ -80,18 +80,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             
-        <StackPanel Grid.Column="0" Margin="10" Height="300">
+        <StackPanel Grid.Column="0" Margin="10" Height="200">
             <ListView ItemsSource="{Binding ListaProductos}" SelectedItem="{Binding Producto}" MaxHeight="300">
 
 
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="REF" DisplayMemberBinding="{Binding Path=DNI}" />
-                        <GridViewColumn Header="MARCA" DisplayMemberBinding="{Binding Path=Nombre}" />
-                        <GridViewColumn Header="DESCRIPCION" DisplayMemberBinding="{Binding Path=Direccion}" />
-                        <GridViewColumn Header="CANTIDAD" DisplayMemberBinding="{Binding Path=Telefono}" />
-                        <GridViewColumn Header="PRECIO" DisplayMemberBinding="{Binding Path=Fecha}" />
-                        <GridViewColumn Header="TOTAL" DisplayMemberBinding="{Binding Path=Dpto.nombreDpto}" />
+                        <GridViewColumn Header="REF" DisplayMemberBinding="{Binding Path=Ref}" />
+                        <GridViewColumn Header="MARCA" DisplayMemberBinding="{Binding Path=Marca}" />
+                        <GridViewColumn Header="DESCRIPCION" DisplayMemberBinding="{Binding Path=Descripcion}" />
+                        <GridViewColumn Header="CANTIDAD" DisplayMemberBinding="{Binding Path=Cantidad}" />
+                        <GridViewColumn Header="PRECIO" DisplayMemberBinding="{Binding Path=Precio}" />
+                        <GridViewColumn Header="TOTAL" DisplayMemberBinding="{Binding Path=Total}" />
 
                     </GridView>
                 </ListView.View>
@@ -106,10 +106,10 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="TOTAL FACTURA:" TextAlignment="Center"  FontSize="30" FontWeight="Bold"/>
-            <TextBox Width="100"/>
+            <TextBox Width="50" TextAlignment="Center" Margin="10"/>
         </StackPanel>
         <StackPanel>
-            <Button Content="CREAR  FACTURA" Width="200" Margin="20"/>
+            <Button Content="CREAR FACTURA" Width="200" Margin="20"/>
         </StackPanel>
 
     </StackPanel>

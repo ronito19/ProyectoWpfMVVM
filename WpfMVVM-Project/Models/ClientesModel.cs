@@ -17,5 +17,24 @@ namespace WpfMVVM_Project.Models
         public string Telefono { set; get; }
 
         public string Email { set; get; }
+
+
+
+        public override string ToString()
+        {
+            return Dni;
+        }
+
+
+       
+
+
+        
+
+
+
     }
+
+
+    
 }

@@ -30,7 +30,7 @@ namespace WpfMVVM_Project.Commands
             }
             else if (vista.Equals("formulario"))
             {
-                MainViewModel.SelectedViewModel = new GafasViewModel();
+                MainViewModel.SelectedViewModel = new Nuevo_ProductosViewModel();
             }
             else if (vista.Equals("proveedores") && !vista.Equals(CurrentVista))
             {

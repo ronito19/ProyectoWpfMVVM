@@ -18,7 +18,7 @@
     </i:Interaction.Triggers>
 
 
-    <Grid Background="#FFE2BAAB">
+    <Grid Background="MintCream">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="350"/>
@@ -31,7 +31,7 @@
         <TextBlock Text="TABLA  PRODUCTOS" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" FontWeight="Bold" TextAlignment="Center"/>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="10" Width="450" HorizontalAlignment="Center">
-            <ListView x:Name="productoListView" HorizontalAlignment="Center" ItemsSource="{Binding ListaProductos}" SelectionChanged="productosListView_SelectionChanged">
+            <ListView x:Name="productoListView" HorizontalAlignment="Center" ItemsSource="{Binding ListaProductos}" SelectionChanged="productosListView_SelectionChanged" Foreground="DarkBlue" FontWeight="Bold">
 
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="SelectionChanged">

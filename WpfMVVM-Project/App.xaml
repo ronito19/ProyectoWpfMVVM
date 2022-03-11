@@ -20,6 +20,10 @@
                 <views:ProductosTableView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type  viewsmodels:Nuevo_ProductosViewModel}">
+                <views:Nuevo_Edit_Productos/>
+            </DataTemplate>
+
 
 
 
