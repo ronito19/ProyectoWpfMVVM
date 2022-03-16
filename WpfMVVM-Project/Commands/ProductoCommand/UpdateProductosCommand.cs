@@ -13,11 +13,8 @@ using WpfMVVM_Project.ViewModels;
 
 namespace WpfMVVM_Project.Commands.ProductoCommand
 {
-    class LoadProductosCommand : ICommand
+    class UpdateProductosCommand : ICommand
     {
-        public Nuevo_ProductosViewModel nuevo_ProductosViewModel { get; set; }
-
-
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
@@ -39,7 +36,7 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
 
             if (responseModel.resultOK)
             {
-                productosTableViewModel.ListaProductos = JsonConvert.DeserializeObject<ObservableCollection<ProductosModel>>((string)responseModel.data);
+                nuevo_ProductosViewModel.ListaProductos = JsonConvert.DeserializeObject<ObservableCollection<ProductosModel>>((string)responseModel.data);
             }
             else
             {
@@ -47,16 +44,8 @@ namespace WpfMVVM_Project.Commands.ProductoCommand
             }
         }
 
-
-
-        public ProductosTableViewModel productosTableViewModel;
-
-        public LoadProductosCommand(ProductosTableViewModel productosTableViewModel)
-        {
-            this.productosTableViewModel = productosTableViewModel;
-        }
-
-        public LoadProductosCommand(Nuevo_ProductosViewModel nuevo_ProductosViewModel)
+        public Nuevo_ProductosViewModel nuevo_ProductosViewModel { get; set; }
+        public UpdateProductosCommand(Nuevo_ProductosViewModel nuevo_ProductosViewModel)
         {
             this.nuevo_ProductosViewModel = nuevo_ProductosViewModel;
         }

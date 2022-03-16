@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WpfMVVM_Project.Commands;
+using WpfMVVM_Project.Commands.ProductoCommand;
 using WpfMVVM_Project.Models;
 
 namespace WpfMVVM_Project.ViewModels
@@ -13,9 +14,14 @@ namespace WpfMVVM_Project.ViewModels
     class Nuevo_ProductosViewModel : ViewModelBase
     {
         public ICommand UpdateFacturasCommand { set; get; }
+        public ICommand UpdateClientesCommand { set; get; }
 
+        public ICommand UpdateProductosCommand { set; get; }
+        public ICommand LoadProductosCommand { set; get; }
+
+        public int Cantidad { set; get; }
         
-        
+     
         private ClientesModel selectedClientes;
 
         public ClientesModel SelectedClientes
@@ -51,7 +57,42 @@ namespace WpfMVVM_Project.ViewModels
 
 
 
-        public ObservableCollection<ClientesModel> listaClientes;
+        private ObservableCollection<ProductoFacturaModel> productoFacturaList;
+
+        public ObservableCollection<ProductoFacturaModel> ProductoFacturaList
+        {
+            get
+            {
+                return productoFacturaList;
+            }
+            set
+            {
+                productoFacturaList = value;
+                OnPropertyChanged(nameof(ProductoFacturaList));
+            }
+        }
+
+
+
+        private ProductoFacturaModel currentProductosFactura;
+
+        public ProductoFacturaModel CurrentProductosFactura
+        {
+            get
+            {
+                return currentProductosFactura;
+            }
+            set
+            {
+                currentProductosFactura = value;
+                OnPropertyChanged(nameof(CurrentProductosFactura));
+            }
+        }
+
+
+
+
+        private ObservableCollection<ClientesModel> listaClientes;
 
         public ObservableCollection<ClientesModel> ListaClientes
         {
@@ -67,25 +108,48 @@ namespace WpfMVVM_Project.ViewModels
         }
 
 
+
+        private ObservableCollection<ProductosModel> listaProductos;
+
+        public ObservableCollection<ProductosModel> ListaProductos
+        {
+            get
+            {
+                return listaProductos;
+            }
+            set
+            {
+                listaProductos = value;
+                OnPropertyChanged(nameof(ListaProductos));
+            }
+        }
+
+
+
+
+
+
         public DateTime fecha1 { set; get; }
 
-
+        public UpdateViewCommand UpdateViewCommand { get; set; }
 
 
         public Nuevo_ProductosViewModel(UpdateViewCommand updateViewCommand)
         {
             UpdateFacturasCommand = new UpdateFacturasCommand(this);
-
+            UpdateClientesCommand = new UpdateClientesCommand(this);
+            LoadProductosCommand = new LoadProductosCommand(this);
+            UpdateProductosCommand = new UpdateProductosCommand(this);
             ListaClientes = new ObservableCollection<ClientesModel>();
-
+            ListaProductos = new ObservableCollection<ProductosModel>();
+            ProductoFacturaList = new ObservableCollection<ProductoFacturaModel>();
+            CurrentProductosFactura = new ProductoFacturaModel();
+            this.UpdateViewCommand = UpdateViewCommand;
             fecha1 = DateTime.Today;
 
-            Productos = new ProductosModel();
+            
         }
 
-        public Nuevo_ProductosViewModel()
-        {
-
-        }
+      
     }
 }

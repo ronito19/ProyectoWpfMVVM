@@ -13,7 +13,7 @@ namespace WpfMVVM_Project.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-
+        public Nuevo_ProductosViewModel nuevo_ProductosViewModel { get; set; }
         public bool CanExecute(object parameter)
         {
             return true;
@@ -30,7 +30,7 @@ namespace WpfMVVM_Project.Commands
             }
             else if (vista.Equals("formulario"))
             {
-                MainViewModel.SelectedViewModel = new Nuevo_ProductosViewModel();
+                MainViewModel.SelectedViewModel = nuevo_ProductosViewModel;
             }
             else if (vista.Equals("proveedores") && !vista.Equals(CurrentVista))
             {
@@ -56,6 +56,7 @@ namespace WpfMVVM_Project.Commands
         {
             MainViewModel = mainViewModel;
             MainViewModel.SelectedViewModel = new HomeViewModel();
+            nuevo_ProductosViewModel = new Nuevo_ProductosViewModel(this);
 
         }
     }

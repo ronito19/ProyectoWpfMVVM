@@ -200,6 +200,13 @@ namespace WpfMVVM_Project.Models
                 stock = value;
                 OnPropertyChanged(nameof(Stock));
             }
-        }     
+        }
+
+
+        public override string ToString()
+        {
+            return " ID: "+ _id +"  -  "  +  " Marca: "  +  marca;
+        }
+
     }
 }

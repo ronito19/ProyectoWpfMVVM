@@ -22,7 +22,7 @@ namespace WpfMVVM_Project.Models
 
         public override string ToString()
         {
-            return Dni;
+            return " DNI: "  +  Dni  +  "  -  "  +   " Nombre: "  +  Nombre;
         }
 
 
