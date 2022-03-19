@@ -97,16 +97,16 @@
 
             <StackPanel Grid.Column="1" Margin="10">
                 <TextBlock Text="PRODUCTO" TextAlignment="Center" Margin="20"/>
-                <Button Content="ELIMINAR" Width="100" Command="{Binding DeleteProductoCommand}" />
+                <Button Content="ELIMINAR" Width="100" Command="{Binding UpdateFacturasCommand}" CommandParameter="borrar"/>
             </StackPanel>    
         </Grid>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="TOTAL FACTURA:" TextAlignment="Center"  FontSize="30" FontWeight="Bold" Foreground="Purple"/>
-            <TextBox Width="50" TextAlignment="Center" Margin="10" Foreground="DarkBlue" FontWeight="Bold"/>
+            <TextBlock Width="50" TextAlignment="Center" Text="{Binding TotalFactura}" Margin="10" Foreground="DarkBlue" FontWeight="Bold"/>
         </StackPanel>
         <StackPanel>
-            <Button Content="CREAR FACTURA" Width="200" Margin="20"/>
+            <Button Content="CREAR FACTURA" Command="{Binding AddFacturaCommand}" Width="200" Margin="20"/>
         </StackPanel>
 
     </StackPanel>

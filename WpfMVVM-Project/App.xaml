@@ -8,8 +8,8 @@
     
     <Application.Resources>
         <ResourceDictionary>
-            <DataTemplate DataType="{x:Type  viewsmodels:PaginaPrincipalViewModel}">
-                <views:PaginaPrincipal/>
+            <DataTemplate DataType="{x:Type  viewsmodels:ConsultasViewModel}">
+                <views:ConsultasView/>
             </DataTemplate>
             
             <DataTemplate DataType="{x:Type  viewsmodels:ProveedoresTableViewModel}">

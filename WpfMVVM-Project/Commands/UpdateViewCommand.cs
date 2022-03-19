@@ -24,9 +24,9 @@ namespace WpfMVVM_Project.Commands
         {
             Console.WriteLine(parameter.ToString());
             string vista = parameter.ToString();
-            if (vista.Equals("clientes"))
+            if (vista.Equals("consultas"))
             {
-                MainViewModel.SelectedViewModel = new PaginaPrincipalViewModel();
+                MainViewModel.SelectedViewModel = new ConsultasViewModel(this);
             }
             else if (vista.Equals("formulario"))
             {

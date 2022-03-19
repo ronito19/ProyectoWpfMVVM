@@ -15,12 +15,30 @@ namespace WpfMVVM_Project.ViewModels
     {
         public ICommand UpdateFacturasCommand { set; get; }
         public ICommand UpdateClientesCommand { set; get; }
-
         public ICommand UpdateProductosCommand { set; get; }
         public ICommand LoadProductosCommand { set; get; }
 
-        public int Cantidad { set; get; }
+        public ICommand AddFacturaCommand { set; get; }
+
+
+
+
+        private double totalFactura;
+
+        public double TotalFactura
+        {
+            get
+            {
+                return totalFactura;
+            }
+            set
+            {
+                totalFactura = value;
+                OnPropertyChanged(nameof(TotalFactura));
+            }
+        }
         
+
      
         private ClientesModel selectedClientes;
 
@@ -91,6 +109,23 @@ namespace WpfMVVM_Project.ViewModels
 
 
 
+        private ProductoFacturaModel selectedProductosFactura;
+
+        public ProductoFacturaModel SelectedProductosFactura
+        { 
+            get
+            {
+                return selectedProductosFactura;
+            }
+            set
+            {
+                selectedProductosFactura = value;
+                OnPropertyChanged(nameof(SelectedProductosFactura));
+            }
+        }
+
+
+
 
         private ObservableCollection<ClientesModel> listaClientes;
 
@@ -140,10 +175,12 @@ namespace WpfMVVM_Project.ViewModels
             UpdateClientesCommand = new UpdateClientesCommand(this);
             LoadProductosCommand = new LoadProductosCommand(this);
             UpdateProductosCommand = new UpdateProductosCommand(this);
+            AddFacturaCommand = new AddFacturaCommand(this);
             ListaClientes = new ObservableCollection<ClientesModel>();
             ListaProductos = new ObservableCollection<ProductosModel>();
             ProductoFacturaList = new ObservableCollection<ProductoFacturaModel>();
             CurrentProductosFactura = new ProductoFacturaModel();
+            SelectedProductosFactura = new ProductoFacturaModel();
             this.UpdateViewCommand = UpdateViewCommand;
             fecha1 = DateTime.Today;
 
