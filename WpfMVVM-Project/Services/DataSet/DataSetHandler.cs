@@ -1,9 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using WpfMVVM_Project.Models;
-using WpfMVVM_Project.Services.DataSet.DataSet1TableAdapters;
+using WpfMVVM_Project.Services.DataSet.DataSetTableAdapters;
 using WpfMVVM_Project.ViewModels;
 
 namespace WpfMVVM_Project.Services.DataSet
@@ -19,6 +20,8 @@ namespace WpfMVVM_Project.Services.DataSet
         private static DetalleTableAdapter detallesAdapter = new DetalleTableAdapter();
 
         private static DataTable1TableAdapter adapter = new DataTable1TableAdapter();
+
+        
 
 
 
@@ -71,7 +74,34 @@ namespace WpfMVVM_Project.Services.DataSet
 
 
 
-        
+        public static DataTable GetDataByIdFactura(int Id_factura)
+        {
+            return adapter.GetDataByIdFactura(Id_factura);
+        }
+
+
+
+        public static DataTable GetDataByFacturaClientes(string Nombre)
+        {
+            return adapter.GetDataByFacturaClientes(Nombre);
+        }
+
+
+
+        public static DataTable GetDataByFacturaFechas(DateTime Fecha)
+        {
+            return adapter.GetDataByFacturaFechas(Fecha.ToString());
+        }
+
+
+
+        public static DataTable GetDataByFacturaClienteFecha(string Dni, DateTime Fecha1, DateTime Fecha2)
+        {
+            return adapter.GetDataByFacturaClienteFecha(Dni, Fecha1.ToString(), Fecha2.ToString());
+        }
+
+
+
 
 
     }

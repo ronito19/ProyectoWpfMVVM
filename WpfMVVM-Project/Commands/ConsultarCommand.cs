@@ -25,7 +25,14 @@ namespace WpfMVVM_Project.Commands
 
                 if (consulta.Equals("Id_factura"))
                 {
-                    consultasViewModel.updateViewCommand.Execute("formulario");
+                    consultasViewModel.updateViewCommand.reportViewModel.GenerarInforme(consultasViewModel.Id_factura);
+                    consultasViewModel.updateViewCommand.Execute("report");
+                    
+                }
+                else if (consulta.Equals("Nombre"))
+                {
+                    consultasViewModel.updateViewCommand.reportViewModel.GenerarInforme(consultasViewModel.Nombre);
+                    consultasViewModel.updateViewCommand.Execute("report");
                 }
             }
         }

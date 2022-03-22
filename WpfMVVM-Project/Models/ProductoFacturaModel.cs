@@ -27,6 +27,9 @@ namespace WpfMVVM_Project.Models
             return MemberwiseClone();
         }
 
+
+
+
         private ProductosModel producto;
 
         public ProductosModel Producto

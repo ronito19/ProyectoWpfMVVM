@@ -38,7 +38,7 @@ namespace WpfMVVM_Project.Services
             var handler = new WinHttpHandler();
             var client = new HttpClient(handler);
             var request = new HttpRequestMessage(new HttpMethod(requestModel.method),
-                "http://localhost" + requestModel.route);
+                "http://localhost:5000" + requestModel.route);
 
 
             string token = ComputeSHA256Hash(USER + requestModel.route + ComputeSHA256Hash(PASSWORD) + DateTime.Now.Minute);

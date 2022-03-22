@@ -13,6 +13,8 @@ namespace WpfMVVM_Project.Commands
     {
         public event EventHandler CanExecuteChanged;
 
+        public ReportViewModel ReportViewModel { set; get; }
+
         public Nuevo_ProductosViewModel nuevo_ProductosViewModel { get; set; }
         public bool CanExecute(object parameter)
         {
@@ -42,21 +44,24 @@ namespace WpfMVVM_Project.Commands
                 CurrentVista = vista;
                 MainViewModel.SelectedViewModel = new ProductosTableViewModel();
             }
-            
+            else if (vista.Equals("report"))
+            {
+                MainViewModel.SelectedViewModel = reportViewModel;
+            }
+
         }
-
-
-
-        public MainViewModel MainViewModel { get; set; }
 
         string CurrentVista { get; set; }
 
+        public ReportViewModel reportViewModel { set; get; }
 
+        public MainViewModel MainViewModel { get; set; }
         public UpdateViewCommand(MainViewModel mainViewModel)
         {
             MainViewModel = mainViewModel;
             MainViewModel.SelectedViewModel = new HomeViewModel();
             nuevo_ProductosViewModel = new Nuevo_ProductosViewModel(this);
+            reportViewModel = new ReportViewModel();
 
         }
     }

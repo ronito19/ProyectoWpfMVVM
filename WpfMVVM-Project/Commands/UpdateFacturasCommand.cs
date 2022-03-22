@@ -111,17 +111,6 @@ namespace WpfMVVM_Project.Commands
                             break;
 
                     }
-
-
-
-                    // ProveedoresModel proveedor = (ProveedoresModel)parameter;
-                    //proveedoresViewModel.CurrentProveedores = (ProveedoresModel)proveedor.Clone();
-
-
-
-
-
-
                 }
             }
             else
@@ -129,9 +118,7 @@ namespace WpfMVVM_Project.Commands
                 if (parameter is ProductoFacturaModel)
                 {
                    ProductoFacturaModel producto = (ProductoFacturaModel)parameter;
-
-                    // facturasViewModel.CurrentProductosFactura = (ProductoFacturaModel)producto.Clone();
-                    nuevo_ProductosViewModel.SelectedProductosFactura = (ProductoFacturaModel)producto.Clone();
+                   nuevo_ProductosViewModel.SelectedProductosFactura = (ProductoFacturaModel)producto.Clone();
                 }
 
             }

@@ -21,6 +21,7 @@ namespace WpfMVVM_Project.Commands
         public void Execute(object parameter)
         {
             nuevo_ProductosViewModel.ListaClientes = DataSetHandler.getClientes();
+            
 
         }
 
@@ -32,6 +33,9 @@ namespace WpfMVVM_Project.Commands
             this.nuevo_ProductosViewModel = nuevo_ProductosViewModel;
         }
 
+
         
+
+
     }
 }

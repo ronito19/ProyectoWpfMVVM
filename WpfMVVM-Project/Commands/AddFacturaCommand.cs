@@ -51,10 +51,7 @@ namespace WpfMVVM_Project.Commands
                     nuevo_ProductosViewModel.ListaClientes = new System.Collections.ObjectModel.ObservableCollection<Models.ClientesModel>();
 
                 }
-                else
-                {
-                    MessageBox.Show(" No se pudo crear la factura :(");
-                }
+                
             }
         }
 
