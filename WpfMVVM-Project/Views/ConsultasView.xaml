@@ -23,14 +23,14 @@
             <TextBlock Text="CONSULTAR  FACTURAS  POR  CLIENTE" TextAlignment="Center" FontSize="15" FontWeight="Bold" Foreground="Purple"/>
             <TextBlock Margin="5" Text="Selecciona un Cliente:" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <ComboBox SelectedItem="{Binding SelectedClientes}" ItemsSource="{Binding ListaClientes}" Margin="20,0,20,10" Width="150">
+                <ComboBox SelectedItem="{Binding SelectedClientes}" ItemsSource="{Binding ListaClientes}" Margin="20,0,20,10" Width="150" Cursor="Hand">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="DropDownOpened">
-                            <i:InvokeCommandAction Command="{Binding UpdateClientesCommand}"/>
+                            <i:InvokeCommandAction Command="{Binding UpdateClienteCommand}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </ComboBox>
-                <Button Margin="10,0,0,10" Content="CONSULTAR" Width="110" Height="30" />
+                <Button Margin="10,0,0,10" Content="CONSULTAR" Command="{Binding ConsultarCommand}" CommandParameter="Id_factura" Width="110" Height="30" />
             </StackPanel>
         </StackPanel>
 

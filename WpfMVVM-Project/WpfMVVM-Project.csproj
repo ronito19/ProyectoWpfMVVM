@@ -142,6 +142,7 @@
     <Compile Include="Commands\ProveedorCommand\LoadProveedorCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\LoadProveedoresCommand.cs" />
     <Compile Include="Commands\ProveedorCommand\NewProveedorCommand.cs" />
+    <Compile Include="Commands\UpdateClienteCommand.cs" />
     <Compile Include="Commands\UpdateClientesCommand.cs" />
     <Compile Include="Commands\UpdateFacturasCommand.cs" />
     <Compile Include="Commands\UpdateViewCommand.cs" />

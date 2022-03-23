@@ -24,6 +24,10 @@
                 <views:Nuevo_Edit_Productos/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type  viewsmodels:ReportViewModel}">
+                <views:ReportView/>
+            </DataTemplate>
+
 
 
 
